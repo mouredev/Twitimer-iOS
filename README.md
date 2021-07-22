@@ -6,6 +6,14 @@
 
 Twitimer es una App gratuita para **[iOS](https://apps.apple.com/us/app/twitimer-twitch-guide/id1564592351)** y **[Android](https://play.google.com/store/apps/details?id=com.mouredev.twitimer)** que se ha desarrollado para ayudar a usuarios de Twitch, pero sobre todo pensando en generar contenido formativo para toda la comunidad de **programadores y programadoras** interesada en el mundo del desarrollo de apps para dispositivos móviles. Su apoyo ha hecho posible el proyecto (ante todo quiero que sea una App gratuita y en constante evolución).
 
+### Requisitos mínimos
+[![Swift](https://img.shields.io/badge/Swift-5-orange.svg?longCache=true&style=popout-square)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-12.5-blue.svg?longCache=true&style=popout-square)](https://developer.apple.com/xcode)
+[![iOS](https://img.shields.io/badge/iOS-14.1-red.svg?longCache=true&style=popout-square)](https://www.apple.com/es/ios)
+
+* Por razones de seguridad debes añadir tu propio fichero de configuración de Firebase `GoogleService-Info.plist` con Realtime Database activo y las claves de acceso al API de Twitch en Remote Config con los valores `TwitchClientID` y `TwitchClientSecret`.
+* Es suficiente con ejecutar el archivo `Twitimer.xcodeproj` en Xcode.
+
 ### ¿De qué forma utilizamos Twitimer para aprender programación?
 * Puedes acceder a su código fuente libremente.
 * Explico cómo funciona a nivel técnico en cada plataforma.
