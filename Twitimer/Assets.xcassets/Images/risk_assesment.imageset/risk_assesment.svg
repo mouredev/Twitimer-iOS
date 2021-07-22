@@ -1,0 +1,53 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-6 {
+        fill: #3a1c66;
+      }
+
+      .cls-1 {
+        clip-rule: evenodd;
+      }
+
+      .cls-3 {
+        opacity: 0.15;
+      }
+
+      .cls-4 {
+        fill: #4f4f4f;
+      }
+
+      .cls-4, .cls-6 {
+        fill-rule: evenodd;
+      }
+
+      .cls-5 {
+        fill: #fa2828;
+      }
+
+      .cls-7 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-8 {
+        fill: #fff;
+        opacity: 0.3;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path class="cls-1" d="M49,27A22,22,0,1,1,27,5,22,22,0,0,1,49,27ZM27,11A16,16,0,1,0,43,27,16,16,0,0,0,27,11Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect class="cls-2" x="40.92" y="37.53" width="6.77" height="13.55" transform="translate(-18.35 44.31) rotate(-45.01)"/>
+    <rect class="cls-3" x="40.92" y="37.53" width="6.77" height="13.55" transform="translate(-18.35 44.31) rotate(-45.01)"/>
+  </g>
+  <path class="cls-4" d="M60.46,53l0,0L47.14,42.36l-4.79,4.79L53,60.5l0,0A5.25,5.25,0,1,0,60.46,53Z"/>
+  <path class="cls-5" d="M29,29H25L23,14h8Zm-2,2a4,4,0,1,0,4,4A4,4,0,0,0,27,31Z"/>
+  <g>
+    <path class="cls-6" d="M49,27A22,22,0,1,1,27,5,22,22,0,0,1,49,27ZM27,11A16,16,0,1,0,43,27,16,16,0,0,0,27,11Z"/>
+    <g class="cls-7">
+      <rect class="cls-8" x="27" y="5" width="22" height="44"/>
+    </g>
+  </g>
+</svg>

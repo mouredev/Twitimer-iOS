@@ -1,0 +1,63 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3a1c66;
+      }
+
+      .cls-2, .cls-7 {
+        opacity: 0.3;
+      }
+
+      .cls-3, .cls-5, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #f0f0ff;
+      }
+
+      .cls-5 {
+        opacity: 0.75;
+      }
+
+      .cls-6 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-8 {
+        opacity: 0.6;
+      }
+
+      .cls-9 {
+        fill: #0d0d0d;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" x="20" y="20" width="24" height="24" rx="3"/>
+    </clipPath>
+  </defs>
+  <g>
+    <path class="cls-1" d="M52,44a8,8,0,0,0-4.06,1.11l-29-29a8,8,0,1,0-2.83,2.83L45.11,47.94A8,8,0,1,0,52,44Z"/>
+    <g class="cls-2">
+      <path class="cls-3" d="M52,44a8,8,0,0,0-4.06,1.11l-29-29a8,8,0,1,0-2.83,2.83L45.11,47.94A8,8,0,1,0,52,44Z"/>
+    </g>
+  </g>
+  <g>
+    <circle class="cls-4" cx="12" cy="12" r="5"/>
+    <circle class="cls-5" cx="12" cy="12" r="5"/>
+  </g>
+  <g>
+    <circle class="cls-4" cx="52" cy="52" r="5"/>
+    <circle class="cls-5" cx="52" cy="52" r="5"/>
+  </g>
+  <g>
+    <rect class="cls-1" x="20" y="20" width="24" height="24" rx="3"/>
+    <g class="cls-6">
+      <polygon class="cls-7" points="18 18 46 18 46 23.92 18 40.08 18 18"/>
+      <g class="cls-8">
+        <path class="cls-9" d="M36,29a4,4,0,1,0-5.3,3.77L29,39h6l-1.7-6.23A4,4,0,0,0,36,29Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

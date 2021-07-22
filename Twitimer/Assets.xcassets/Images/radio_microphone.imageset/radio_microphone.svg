@@ -1,0 +1,79 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9146ff;
+      }
+
+      .cls-2, .cls-7 {
+        fill: #3a1c66;
+      }
+
+      .cls-2 {
+        clip-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #4f4f4f;
+      }
+
+      .cls-4, .cls-9 {
+        fill: #231f20;
+      }
+
+      .cls-4, .cls-6 {
+        opacity: 0.3;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-10, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-10, .cls-7 {
+        fill-rule: evenodd;
+      }
+
+      .cls-8 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-9 {
+        fill-opacity: 0.3;
+      }
+
+      .cls-10 {
+        opacity: 0.1;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path class="cls-1" d="M48,28c0-2-1.79-3-4-3H20c-2.21,0-4,1-4,3a39.2,39.2,0,0,0,1.41,10.11C19.49,45.33,24.4,49,32,49s12.51-3.67,14.59-10.89A39.2,39.2,0,0,0,48,28Z"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path class="cls-2" d="M42.75,13C41.21,7.66,37.94,5,32,5s-9.21,2.66-10.75,8c-1.67,5.8-1.67,18.2,0,24,1.54,5.33,4.81,8,10.75,8s9.21-2.67,10.75-8C44.42,31.2,44.42,18.8,42.75,13Z"/>
+    </clipPath>
+  </defs>
+  <g>
+    <rect class="cls-3" x="29" y="48" width="6" height="7"/>
+    <rect class="cls-4" x="29" y="48" width="6" height="7"/>
+  </g>
+  <path class="cls-1" d="M44,59a1.33,1.33,0,0,0,.62-2.44C41,54.56,38.72,53,32,53s-9,1.56-12.58,3.56A1.33,1.33,0,0,0,20,59Z"/>
+  <g>
+    <path class="cls-1" d="M48,28c0-2-1.79-3-4-3H20c-2.21,0-4,1-4,3a39.2,39.2,0,0,0,1.41,10.11C19.49,45.33,24.4,49,32,49s12.51-3.67,14.59-10.89A39.2,39.2,0,0,0,48,28Z"/>
+    <g class="cls-5">
+      <rect class="cls-6" x="15.06" y="24.13" width="13.94" height="27.37"/>
+    </g>
+  </g>
+  <g>
+    <path class="cls-7" d="M42.75,13C41.21,7.66,37.94,5,32,5s-9.21,2.66-10.75,8c-1.67,5.8-1.67,18.2,0,24,1.54,5.33,4.81,8,10.75,8s9.21-2.67,10.75-8C44.42,31.2,44.42,18.8,42.75,13Z"/>
+    <g class="cls-8">
+      <g>
+        <rect class="cls-9" x="19" y="25" width="26" height="21"/>
+        <path class="cls-10" d="M41,5c-5.94,0-9.21,2.66-10.75,8A48.43,48.43,0,0,0,29,25V46H19V5Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
