@@ -17,11 +17,11 @@ struct User: Codable {
     
     let id: String?
     let login: String?
-    let displayName: String?
-    let broadcasterType: BroadcasterType?
-    let descr: String?
-    let profileImageUrl: String?
-    let offlineImageUrl: String?
+    private(set) var displayName: String?
+    private(set) var broadcasterType: BroadcasterType?
+    private(set) var descr: String?
+    private(set) var profileImageUrl: String?
+    private(set) var offlineImageUrl: String?
     
     // Optional
     var streamer: Bool?
@@ -63,6 +63,27 @@ struct User: Codable {
             scheduleJSON.append(updateUserSchedule.toJSON())
         }
         return scheduleJSON
+    }
+    
+    // Actualiza datos mutables del usuario. Esto ocurre cuando recuperamos de nuevo el usuario de Twitch para actualizarlo en Twitimer.
+    mutating func override(user: User) -> Bool {
+        
+        var override = false
+        if displayName != user.displayName
+            || broadcasterType?.rawValue != user.broadcasterType?.rawValue
+            || descr != user.descr
+            || profileImageUrl != user.profileImageUrl
+            || offlineImageUrl != user.offlineImageUrl {
+            override = true
+        }
+        
+        displayName = user.displayName
+        broadcasterType = user.broadcasterType
+        descr = user.descr
+        profileImageUrl = user.profileImageUrl
+        offlineImageUrl = user.offlineImageUrl
+        
+        return override
     }
     
     // Actualiza el calendario del usuario a fechas disponibles a futuro
