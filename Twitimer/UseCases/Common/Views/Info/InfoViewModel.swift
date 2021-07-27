@@ -118,10 +118,8 @@ final class InfoViewModel: ObservableObject {
     }
     
     func share() {
-        if let url = URL(string: Constants.kTwitimerUri) {
-            let vc = UIActivityViewController(activityItems: [shareTextl], applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true, completion: nil)
-        }
+        let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(vc, animated: true, completion: nil)
     }
     
 }
