@@ -98,6 +98,7 @@ struct SearchView: View {
                                     ZStack {
                                         NavigationLink(destination: UserRouter.readOnlyView(user: user)) {}.opacity(0)
                                         SearchRowView(user: user, addAction: {
+                                            text = ""
                                             viewModel.updateCount()
                                         })
                                     }.listRowInsets(EdgeInsets()).background(Color.backgroundColor)
@@ -148,6 +149,7 @@ struct SearchView: View {
     private func enableCancel() -> Bool {
         return isEditing
             || (!isEditing && !viewModel.search.isEmpty)
+            || (!isEditing && !viewModel.users.isEmpty && viewModel.found)
             || (!isEditing && viewModel.users.isEmpty && viewModel.search.isEmpty)
     }
         

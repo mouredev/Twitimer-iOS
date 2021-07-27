@@ -78,9 +78,7 @@ struct SearchRowView: View {
 
     private func save() {
         added.toggle()
-        if let login = user.login {
-            Session.shared.save(followedUser: login)
-        }
+        Session.shared.save(followedUser: user)
         addAction()
     }
     

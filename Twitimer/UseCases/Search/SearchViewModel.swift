@@ -14,6 +14,7 @@ final class SearchViewModel: ObservableObject {
     private let router: SearchRouter
     
     private var lastSearchedUser: String?
+    private(set) var found = false
     
     // Localization
     
@@ -68,6 +69,7 @@ final class SearchViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.loading = false
                         self.search = []
+                        self.found = !user.isEmpty
                         self.users = users ?? []
                     }
                 }
@@ -76,6 +78,7 @@ final class SearchViewModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.loading = false
                         self.search = []
+                        self.found = false
                         self.users = []
                     }
                 }
@@ -99,15 +102,19 @@ final class SearchViewModel: ObservableObject {
     
     func editing() {
         search = []
+        found = false
         users = []
     }
 
     func cancel() {
+        found = false
         search(query: "")
     }
     
     func updateCount() {
+        Util.endEditing()
         streamersCount = Session.shared.user?.followedUsers?.count ?? 0
+        showStreamers()
     }
     
     // Private
@@ -115,6 +122,7 @@ final class SearchViewModel: ObservableObject {
     private func showStreamers() {
         loading = false
         search = []
+        found = false
         users = Session.shared.streamers ?? []
     }
     

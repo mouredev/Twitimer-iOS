@@ -102,20 +102,26 @@ final class Session {
             }
         }
     }
-    
-    func save(followedUser: String) {
+
+    func save(followedUser: User) {
         
-        if let index = user?.followedUsers?.firstIndex(of: followedUser) {
+        let login = followedUser.login ?? ""
+        
+        if let index = user?.followedUsers?.firstIndex(of: login) {
             user?.followedUsers?.remove(at: index)
+            streamers?.removeAll(where: { user in
+                return user.login == login
+            })
             
-            setupNotification(add: false, topic: followedUser)
+            setupNotification(add: false, topic: login)
         } else {
             if user?.followedUsers == nil {
                 user?.followedUsers = []
             }
-            user?.followedUsers?.append(followedUser)
+            user?.followedUsers?.append(login)
+            streamers?.append(followedUser)
             
-            setupNotification(add: true, topic: followedUser)
+            setupNotification(add: true, topic: login)
         }
         
         if let user = user {
