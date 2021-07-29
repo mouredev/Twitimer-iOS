@@ -8,7 +8,7 @@
 
 // Generic
 "title" = "Twitimer";
-"accept" = "Accept";
+"accept" = "Ok";
 "cancel" = "Cancel";
 "understood" = "Understood";
 "next" = "Next";
