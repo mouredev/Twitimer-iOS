@@ -102,20 +102,26 @@ final class Session {
             }
         }
     }
-    
-    func save(followedUser: String) {
+
+    func save(followedUser: User) {
         
-        if let index = user?.followedUsers?.firstIndex(of: followedUser) {
+        let login = followedUser.login ?? ""
+        
+        if let index = user?.followedUsers?.firstIndex(of: login) {
             user?.followedUsers?.remove(at: index)
+            streamers?.removeAll(where: { user in
+                return user.login == login
+            })
             
-            setupNotification(add: false, topic: followedUser)
+            setupNotification(add: false, topic: login)
         } else {
             if user?.followedUsers == nil {
                 user?.followedUsers = []
             }
-            user?.followedUsers?.append(followedUser)
+            user?.followedUsers?.append(login)
+            streamers?.append(followedUser)
             
-            setupNotification(add: true, topic: followedUser)
+            setupNotification(add: true, topic: login)
         }
         
         if let user = user {
@@ -143,7 +149,7 @@ final class Session {
                 self.user?.followedUsers = followedUsers
                 self.user?.streamer = streamer
                 
-                self.reloadUser(completion: completion)
+                self.reloadUser(override: true, completion: completion)
                 
             } failure: { (_) in
                 self.reloadUser(completion: completion)
@@ -151,19 +157,15 @@ final class Session {
         }
     }
     
-    func reloadUser(completion: @escaping () -> Void) {
+    func reloadUser(override: Bool = false, completion: @escaping () -> Void) {
         
         firebaseAuth {
-            if let user = self.user {
-                FirebaseRDBService.shared.user(user: user) { user in
-                    self.user = user
-                    UserDefaultsProvider.setCodable(key: .authUser, value: user)
-                    self.reloadStreamers(completion: completion)
+            if let currentUser = self.user {
+                FirebaseRDBService.shared.user(user: currentUser) { remoteUser in
+                    self.saveNewUserAndReloadStreamers(currentUser: currentUser, newUser: remoteUser, override: override, completion: completion)
                 } failure: { _ in
-                    FirebaseRDBService.shared.user(user: user, forceStreamer: true) { user in
-                        self.user = user
-                        UserDefaultsProvider.setCodable(key: .authUser, value: user)
-                        self.reloadStreamers(completion: completion)
+                    FirebaseRDBService.shared.user(user: currentUser, forceStreamer: true) { remoteUser in
+                        self.saveNewUserAndReloadStreamers(currentUser: currentUser, newUser: remoteUser, override: override, completion: completion)     
                     } failure: { _ in
                         self.reloadStreamers(completion: completion)
                     }
@@ -317,6 +319,18 @@ final class Session {
             user = User()
             UserDefaultsProvider.setCodable(key: .authUser, value: user)
         }
+    }
+    
+    private func saveNewUserAndReloadStreamers(currentUser: User, newUser: User, override: Bool, completion: @escaping () -> Void) {
+        var user = newUser
+        if override, user.override(user: currentUser) {
+            self.user = user
+            save()
+        } else {
+            self.user = user
+            UserDefaultsProvider.setCodable(key: .authUser, value: user)
+        }
+        reloadStreamers(completion: completion)
     }
     
     private func mergeUsers(user: User, oldFollowers: Set<String>, success: @escaping () -> Void) {

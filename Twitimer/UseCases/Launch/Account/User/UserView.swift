@@ -66,7 +66,9 @@ struct UserView: View {
                                 Text(viewModel.streamerText).font(size: .subhead).foregroundColor(.textColor).frame(maxWidth: .infinity, alignment: .trailing)
                             }.toggleStyle(SwitchToggleStyle(tint: Color.primaryColor))
                             .onChange(of: isStreamer) {
-                                viewModel.save(streamer: $0)
+                                if viewModel.isStreamer != isStreamer {
+                                    viewModel.save(streamer: $0)
+                                }
                             }
                         }
                         
@@ -138,7 +140,7 @@ struct UserView: View {
         .navigationBarTitle("", displayMode: .inline)
         .ignoresSafeArea(.keyboard, edges: .top)
         .onAppear() {
-            isStreamer = viewModel.user?.streamer ?? Session.shared.user?.streamer ?? false
+            isStreamer = viewModel.isStreamer
             if isStreamer && !viewModel.readOnly && !viewModel.firstSync() {
                 DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
                     DispatchQueue.main.async {

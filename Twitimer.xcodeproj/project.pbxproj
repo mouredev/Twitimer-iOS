@@ -19,6 +19,7 @@
 		AC294770268324F900B28A46 /* TextFieldPlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */; };
 		AC2E2DFD267E31440091D5F5 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFC267E31440091D5F5 /* UserSearch.swift */; };
 		AC2E2DFF267E362E0091D5F5 /* SearchQueryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */; };
+		AC4FBBA726B031140045C63B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FBBA626B031140045C63B /* ActionButton.swift */; };
 		AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */; };
 		AC7023BE26A6E7840040EDCA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC7023BD26A6E7840040EDCA /* IQKeyboardManagerSwift */; };
 		AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC839999263150A500F0E8F1 /* TwitimerApp.swift */; };
@@ -126,6 +127,7 @@
 		AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderStyle.swift; sourceTree = "<group>"; };
 		AC2E2DFC267E31440091D5F5 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQueryRowView.swift; sourceTree = "<group>"; };
+		AC4FBBA626B031140045C63B /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleSegment.swift; sourceTree = "<group>"; };
 		AC839996263150A500F0E8F1 /* Twitimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC839999263150A500F0E8F1 /* TwitimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitimerApp.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				AC839A162631533C00F0E8F1 /* MainButton.swift */,
 				AC275D38267B93F400C92508 /* NavigationButton.swift */,
 				ACD3ABE5263A0DE70066160E /* ChannelButton.swift */,
+				AC4FBBA626B031140045C63B /* ActionButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				AC839A362631533C00F0E8F1 /* AccountView.swift in Sources */,
 				AC839A302631533C00F0E8F1 /* UserRouter.swift in Sources */,
 				AC839A332631533C00F0E8F1 /* MainButton.swift in Sources */,
+				AC4FBBA726B031140045C63B /* ActionButton.swift in Sources */,
 				AC127C48267A6DA900B45CF1 /* Onboarding.swift in Sources */,
 				AC839A222631533C00F0E8F1 /* DateExtension.swift in Sources */,
 				AC8CED5326334E3B0079DCBE /* TimerRowView.swift in Sources */,
@@ -1080,7 +1084,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouredev.Twitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1106,7 +1110,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouredev.Twitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

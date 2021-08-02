@@ -29,13 +29,20 @@ struct SearchRowView: View {
     // Body
     
     var body: some View {
-        HStack(alignment: .center, spacing: Size.none.rawValue) {
+        ZStack(alignment: .leading) {
             
-            Button(action: {
+            UserHeaderView(user: user, small: true)
+                .padding(.leading, Size.big.rawValue)
+                .background(Color.secondaryColor)
+                .opacity(added ? 1 : UIConstants.kViewOpacity)
+                .cornerRadius(Size.big.rawValue)
+                .shadow(radius: Size.verySmall.rawValue)
+                .padding(.vertical, Size.small.rawValue)
+            
+            ActionButton(image: Image(added ? "calendar-remove" : "calendar-add"), action: {
                 add()
-            }) {
-                Image(added ? "calendar-remove" : "calendar-add").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.mediumBig.rawValue, height: Size.mediumBig.rawValue).foregroundColor(.lightColor)
-            }.buttonStyle(BorderlessButtonStyle()).padding(.leading, Size.medium.rawValue)
+            })
+            .padding(.leading, Size.medium.rawValue)
             .alert(isPresented: $showMaxStreamersAlert) { () -> Alert in
                 Alert(title: Text(maxStreamersAlertTitleText), message: Text(maxStreamersAlertTitleBody), dismissButton: .default(Text(okText)))
             }
@@ -44,14 +51,7 @@ struct SearchRowView: View {
                     save()
                 }), secondaryButton: .cancel(Text(cancelText)))
             }
-            
-            UserHeaderView(user: user, small: true)
         }
-        .background(Color.secondaryColor)
-        .opacity(added ? 1 : UIConstants.kViewOpacity)
-        .cornerRadius(Size.big.rawValue)
-        .shadow(radius: Size.verySmall.rawValue)
-        .padding(.vertical, Size.small.rawValue)
         .listRowInsets(EdgeInsets())
         .padding(.horizontal, Size.medium.rawValue)
         .background(Color.secondaryBackgroundColor)
@@ -60,6 +60,7 @@ struct SearchRowView: View {
                 added = Session.shared.user?.followedUsers?.contains(login) ?? false
             }
         }
+        
     }
     
     // MARK: Functions
@@ -73,14 +74,12 @@ struct SearchRowView: View {
             showRemoveStreamerAlert.toggle()
         } else {
             save()
-        }        
+        }
     }
-
+    
     private func save() {
         added.toggle()
-        if let login = user.login {
-            Session.shared.save(followedUser: login)
-        }
+        Session.shared.save(followedUser: user)
         addAction()
     }
     

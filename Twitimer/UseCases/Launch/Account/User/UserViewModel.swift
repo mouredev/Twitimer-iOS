@@ -12,10 +12,16 @@ final class UserViewModel: ObservableObject {
     // Properties
     
     private let router: UserRouter
-    let user: User?
+    private let user: User?
     private let onClose: (() -> Void)?
     
     private(set) var readOnly = false
+    
+    var isStreamer: Bool {
+        get {
+            return user?.streamer ?? Session.shared.user?.streamer ?? false
+        }
+    }
     
     @Published var schedule: [UserSchedule] = []
     
@@ -31,9 +37,7 @@ final class UserViewModel: ObservableObject {
     let syncAlertBodyText = "user.syncschedule.alert.body".localizedKey
     let okText = "accept".localizedKey
     let cancelText = "cancel".localizedKey
-    
-    
-    
+
     // Initialization
     
     init(router: UserRouter, user: User?, onClose: (() -> Void)?) {
