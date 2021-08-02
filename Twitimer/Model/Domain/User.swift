@@ -147,7 +147,7 @@ struct UserSchedule: Codable, Equatable {
                 date = updatedDate
             }
             
-            date = date.next(nextWeekday, considerToday: true)
+            date = date.next(nextWeekday, considerToday: true, save: true)
         }
         
         return [DatabaseField.enable.rawValue:enable ? 1 : 0,
