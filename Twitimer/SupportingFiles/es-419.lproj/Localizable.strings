@@ -1,0 +1,102 @@
+/* 
+ Localizable.strings
+ Twitimer
+ 
+ Created by Brais Moure on 20/4/21.
+ 
+ */
+
+// Generic
+"title" = "Twitimer";
+"accept" = "Listo";
+"cancel" = "Cancelar";
+"understood" = "OK";
+"next" = "Siguiente";
+"previous" = "Anterior";
+
+// Onboarding
+"onboarding.page0.title" = "Bienvenido a Twitimer";
+"onboarding.page0.body" = "La App que te ayuda a gestionar tus horarios de emisión y los de tus streamers favoritos en Twitch.";
+"onboarding.page1.title" = "¿Eres streamer?";
+"onboarding.page1.body" = "Inicia sesión con tu cuenta de Twitch y configura tus horarios de emisión. Podrás definir tu horario semanal y crear eventos puntuales.\n\nCada vez que cambies los horarios tus seguidores en Twitimer recibirán una notificación.";
+"onboarding.page2.title" = "¿Sigues a otros streamers?";
+"onboarding.page2.body" = "Puedes seguir a tus streamers favoritos para saber en todo momento el horario y orden de emisión de cada uno de ellos.\n\nSi inicias sesión con tu usuario de Twitch, tus streamers favoritos quedarán asociados a tu cuenta para que así puedas usar Twitimer en varios dispositivos. Recibirás una notificación cuando se actualicen los horarios.";
+"onboarding.page3.title" = "Contador para stremear";
+"onboarding.page3.body" = "Una vez sigas a tus streamers favoritos podrás ver una cuenta atrás para consultar cuando será la próxima emisión de cada uno de ellos. No volverás a perderte un directo.";
+"onboarding.page4.title" = "¿Estás listo?";
+"onboarding.page4.body" = "Twitimer es una App creada para ayudar a los usuarios de Twitch. Ayúdame compartiéndola y hablándole a tus streamers favoritos para que añadan su horario de transmisiones en ella.\n\nCualquier sugerencia para mejorarla es bienvenida. ¡Espero que te resulte muy útil!";
+
+// Search
+"search" = "Buscar";
+"search.channel" = "Canal";
+"search.followedchannels" = "Mis canales";
+"search.bar.placeholder" = "Nombre del canal de Twitch";
+"search.maxstreamers.alert.title" = "No puedes añadir más canales a tu lista";
+"search.maxstreamers.alert.body" = "Debes eliminar primero uno.\n\nTwitimer es una app gratuita creada para ayudar a la comunidad. Colabora compartiéndola y que pueda ampliar el límite. ¡Gracias!";
+"search.removestreamer.alert.title" = "Dejar de seguir a %@";
+"search.removestreamer.alert.body" = "Ya no podrás consultar sus futuras emisiones ni recibirás notificaciones cuando modifique un horario.";
+
+// Countdown
+"countdown.upcoming" = "Próximas emisiones";
+"countdown.reload" = "Actualizar horarios";
+"countdown.live" = "En directo";
+"countdown.day" = "día";
+"countdown.days" = "días";
+
+// Schedule
+"schedule" = "Calendario";
+"schedule.save" = "Guardar calendario";
+"schedule.0" = "Evento puntual";
+"schedule.1" = "Lunes";
+"schedule.2" = "Martes";
+"schedule.3" = "Miércoles";
+"schedule.4" = "Jueves";
+"schedule.5" = "Viernes";
+"schedule.6" = "Sábado";
+"schedule.7" = "Domingo";
+"schedule.event.placeholder" = "Describir evento (temática del directo)";
+
+// User
+"user.closesession" = "Cerrar sesión";
+"user.closesession.alert.body" = "¿Estás seguro de que quieres cerrar sesión?";
+"user.saveschedule.alert.body" = "Si guardas estos nuevos horarios se notificará a tus espectadores.";
+"user.seechannel" = "Ver canal";
+"user.streamer" = "Soy streamer";
+"user.syncschedule.alert.title" = "Sincronizar horario de Twitch";
+"user.syncschedule.alert.body" = "¿Quieres sincronizar tu calendario recurrente de Twitch? Se sobrescribirá la programación de Twitimer.";
+
+// Info
+
+"info.countdown.title" = "Aún no sigues a ningún canal";
+"info.countdown.body" = "Aquí podrás visualizar el tiempo restante para la próxima emisión y consultar los horarios";
+"info.countdown.advice.1" = "Buscar canales";
+
+"info.search.title" = "Introduce el nombre del canal de Twitch";
+"info.search.body" = "Se corresponde con el texto final de la url twitch.tv/[canal]";
+"info.search.advice.1" = "Añade el canal a tu listado. Puedes añadir un total de 20 (por el momento).";
+"info.search.advice.2" = "Elimina el canal de tu listado si ya lo habías añadido con anterioridad.";
+
+"info.channel.title" = "¿No encuentras el canal?";
+"info.channel.body" = "Es posible que %@ aún no se haya registrado en Twitimer.\n¿Te gustaría invitarlo?";
+"info.channel.advice.1" = "Ayúdame hablándole a tus streamers favoritos de Twitimer. Así podrán añadir sus horarios para que los puedas consultar desde la App.";
+"info.channel.share" = "¡Hola @[%@]! ¿Conoces #Twitimer?\n\nEs una App para que los streamers puedan añadir sus horarios de emisión en Twitch y notificar a su audiencia cada vez que hagan.\n\nSe puede descargar para iOS y Android de forma gratuita desde https://twitimer.com\n\n¡Gracias!";
+
+"info.streamer.title" = "¿Eres streamer?";
+"info.streamer.body" = "Si realizas transmisiones en directo activa la opción \"Soy streamer\" para configurar tus horarios y notificar a los espectadores.";
+"info.streamer.advice.1" = "Establece, actualiza y guarda los horarios de tus transmisiones semanales y eventos puntuales.";
+
+"info.auth.title" = "Inicia sesión de forma segura con tu cuenta de Twitch";
+"info.auth.body" = "Si eres streamer necesitas iniciar sesión con tu cuenta de Twitch para así poder gestionar tus horarios y compartirlos con los usuarios de la App.\n\nAunque no seas streamer te recomiendo iniciar sesión para poder guardar tu configuración de Twitimer, sincronizarla entre dispositivos, buscar streamers de forma más sencilla y recibir notificaciones cada vez que un canal actualice sus horarios de emisión.";
+"info.auth.advice.1" = "Iniciar sesión";
+
+"info.schedule.title" = "No hay horarios";
+"info.schedule.body" = "El streamer no tiene horarios disponibles. Puede que aún no los haya añadido desde Twitimer (o quizá se está tomando unas vacaciones).";
+"info.schedule.advice.1" = "Prueba a revisarlos más tarde. Cuando tenga algún horario aparecerá una cuenta atrás en el listado de próximas emisiones.";
+
+// Menu
+
+"menu.by" = "por";
+"menu.info" = "¡Hola! Mi nombre es Brais Moure, soy el creador de Twitimer.\n\nEsta App se ha desarrollado para ayudar a usuarios de Twitch, pero sobre todo pensando en generar contenido formativo para toda la comunidad de programadores y programadoras interesada en el mundo del desarrollo de apps para dispositivos móviles. Ellos han hecho posible el proyecto (ante todo quiero que sea una App gratuita y en constante evolución).\n\nSi te apetece unirte a nuestra comunidad, dejarme algún tipo de sugerencia para mejorar, o apoyar la continuidad del proyecto (unos bits nunca vienen mal para pagar el servidor...), puedes encontrarme en Twitch y resto de redes sociales como @mouredev.\n\n¡Muchas gracias!";
+"menu.site" = "Visita twitimer.com para consultar toda la información oficial";
+"menu.onboarding" = "Visualiza de nuevo el tutorial de bienvenida";
+"menu.version" = "Versión %@. Twitimer no posee ningún tipo de relación con Twitch Interactive, Inc. y todos sus servicios.";

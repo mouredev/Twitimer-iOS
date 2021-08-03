@@ -200,6 +200,7 @@
 		ACEE88AD2635E159007E9473 /* FirebaseRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRCService.swift; sourceTree = "<group>"; };
 		ACFCDD902631DF3100E9E270 /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
 		ACFD66A72639648B00FC5D6B /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		BC68436D26B9BA7500FCEA5F /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -746,6 +747,7 @@
 				en,
 				Base,
 				es,
+				"es-419",
 			);
 			mainGroup = AC83998D263150A500F0E8F1;
 			packageReferences = (
@@ -933,6 +935,7 @@
 			children = (
 				AC275D3B267B99F300C92508 /* en */,
 				AC275D3D267B9B0B00C92508 /* es */,
+				BC68436D26B9BA7500FCEA5F /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
