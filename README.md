@@ -13,6 +13,9 @@ Twitimer es una App gratuita para **[iOS](https://apps.apple.com/us/app/twitimer
 
 * Por razones de seguridad debes añadir tu propio fichero de configuración de Firebase `GoogleService-Info.plist` con Realtime Database activo y las claves de acceso al API de Twitch en Remote Config con los valores `TwitchClientID` y `TwitchClientSecret`.
 * Es suficiente con ejecutar el archivo `Twitimer.xcodeproj` en Xcode.
+* [Puedes ver todo el proceso en este tutorial en YouTube](https://youtu.be/_FLHGY_ATWA)
+
+<a href="https://youtu.be/_FLHGY_ATWA"><img src="http://i3.ytimg.com/vi/_FLHGY_ATWA/maxresdefault.jpg" style="height: 50%; width:50%;"/></a>
 
 ### ¿De qué forma utilizamos Twitimer para aprender programación?
 * Puedes acceder a su código fuente libremente.
