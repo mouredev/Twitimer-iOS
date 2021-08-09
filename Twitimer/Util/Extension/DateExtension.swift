@@ -17,7 +17,7 @@ extension Date {
         return formatter.string(from: self)
     }
     
-    func next(_ weekday: Weekday, considerToday: Bool = false, referenceDate: Date? = nil, duration: Int? = nil) -> Date {
+    func next(_ weekday: Weekday, considerToday: Bool = false, referenceDate: Date? = nil, duration: Int? = nil, save: Bool = true) -> Date {
         
         let dayName = weekday.rawValue
         let weekdaysName = getWeekDaysInEnglish().map { $0.lowercased() }
@@ -28,10 +28,12 @@ extension Date {
         if considerToday && dayOfWeek == searchWeekdayIndex {
             if let referenceDate = referenceDate, let duration = duration, referenceDate.addingTimeInterval(60 * 60 * Double(duration)) > self {
                 return referenceDate
-            } else if self > Date() {
+            } else if self.addingTimeInterval(60 * 60 * Double(duration ?? 0)) <= Date() {
+                return self
+            } else if save && self > Date() {
                 return self
             }
-        }
+         }
         
         var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
         nextDateComponent.weekday = searchWeekdayIndex
