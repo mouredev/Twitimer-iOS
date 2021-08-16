@@ -28,12 +28,12 @@ extension Date {
         if considerToday && dayOfWeek == searchWeekdayIndex {
             if let referenceDate = referenceDate, let duration = duration, referenceDate.addingTimeInterval(60 * 60 * Double(duration)) > self {
                 return referenceDate
-            } else if self.addingTimeInterval(60 * 60 * Double(duration ?? 0)) <= Date() {
-                return self
-            } else if save && self > Date() {
+            } else if Date() <= self.addingTimeInterval(60 * 60 * Double(duration ?? 0))
+                        || self.addingTimeInterval(60 * 60 * Double(duration ?? 0)) <= Date()
+                        || save && self > Date() {
                 return self
             }
-         }
+        }
         
         var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
         nextDateComponent.weekday = searchWeekdayIndex
