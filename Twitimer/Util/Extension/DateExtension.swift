@@ -26,10 +26,18 @@ extension Date {
         
         let dayOfWeek = calendar.component(.weekday, from: self)
         if considerToday && dayOfWeek == searchWeekdayIndex {
-            if let referenceDate = referenceDate, let duration = duration, referenceDate.addingTimeInterval(60 * 60 * Double(duration)) > self {
-                return referenceDate
-            } else if Date() <= self.addingTimeInterval(60 * 60 * Double(duration ?? 0))
-                        || self.addingTimeInterval(60 * 60 * Double(duration ?? 0)) <= Date()
+            if let referenceDate = referenceDate, let duration = duration {
+                
+                let referenceCalendar = Calendar(identifier: .gregorian)
+                var referenceDateComponent = referenceCalendar.dateComponents([.day, .month, .year, .hour, .minute, .second], from: referenceDate)
+                referenceDateComponent.day = calendar.component(.day, from: self)
+                referenceDateComponent.month = calendar.component(.month, from: self)
+                referenceDateComponent.year = calendar.component(.year, from: self)
+
+                if let newReferenceDate = referenceCalendar.date(from: referenceDateComponent), newReferenceDate.addingTimeInterval(60 * 60 * Double(duration)) > self {
+                    return newReferenceDate
+                }
+            } else if self.addingTimeInterval(60 * 60 * Double(duration ?? 0)) <= Date()
                         || save && self > Date() {
                 return self
             }
