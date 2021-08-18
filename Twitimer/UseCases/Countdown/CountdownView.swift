@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftUIRefresh // FIXME: Eliminar cuando podamos añadir .refreshable en iOS 15+
 
 struct CountdownView: View {
     
     // Properties
     
     @ObservedObject var viewModel: CountdownViewModel
+    @State private var isShowingRefresh = false
     
     // Body
     
@@ -43,6 +45,9 @@ struct CountdownView: View {
                                                     streaming.schedule.date)
                                 }.listRowInsets(EdgeInsets()).background(Color.backgroundColor)
                             }
+                        }.pullToRefresh(isShowing: $isShowingRefresh) {
+                            isShowingRefresh = false
+                            viewModel.reload()
                         }
                     }
                 }.background(Color.secondaryBackgroundColor)

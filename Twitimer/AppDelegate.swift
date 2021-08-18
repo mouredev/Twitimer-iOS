@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import Firebase
+import FirebaseMessaging
 import IQKeyboardManagerSwift
 import UserNotifications
 
