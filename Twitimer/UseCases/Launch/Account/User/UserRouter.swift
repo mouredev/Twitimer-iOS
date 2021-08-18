@@ -27,7 +27,7 @@ final class UserRouter {
     }
         
     func userHeaderView(user: User) -> UserHeaderView {
-        return UserHeaderView(user: user)
+        return UserHeaderView(profileImageUrl: user.profileImageUrl, login: user.login, displayName: user.displayName, broadcasterType: user.broadcasterType)
     }
     
     func infoView() -> InfoView {

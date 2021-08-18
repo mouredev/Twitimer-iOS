@@ -84,7 +84,8 @@ struct SearchView: View {
                         if let search = viewModel.search, !search.isEmpty {
                             List {
                                 ForEach(search, id: \.id) { user in
-                                    SearchQueryRowView(user: user).listRowInsets(EdgeInsets()).background(Color.backgroundColor)
+                                    SearchRowView(user: nil, userSearch: user, addAction: nil)
+                                        .listRowInsets(EdgeInsets()).background(Color.backgroundColor)
                                         .onTapGesture {
                                             if let user = user.broadcasterLogin {
                                                 viewModel.search(user: user)
@@ -97,7 +98,7 @@ struct SearchView: View {
                                 ForEach(viewModel.users, id: \.id) { user in
                                     ZStack {
                                         NavigationLink(destination: UserRouter.readOnlyView(user: user)) {}.opacity(0)
-                                        SearchRowView(user: user, addAction: {
+                                        SearchRowView(user: user, userSearch: nil, addAction: {
                                             text = ""
                                             viewModel.updateCount()
                                         })

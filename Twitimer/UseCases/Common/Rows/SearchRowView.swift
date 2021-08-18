@@ -11,11 +11,32 @@ struct SearchRowView: View {
     
     // Properties
     
-    let user: User
+    let user: User? // Primario
+    let userSearch: UserSearch? // Secundario
     @State private var added: Bool = false
     @State private var showMaxStreamersAlert: Bool = false
     @State private var showRemoveStreamerAlert: Bool = false
-    let addAction: () -> Void
+    let addAction: (() -> Void)?
+    
+    private var login: String? {
+        return user?.login ?? userSearch?.broadcasterLogin
+    }
+    
+    private var displayName: String? {
+        return user?.displayName ?? userSearch?.displayName
+    }
+    
+    private var profileImageUrl: String? {
+        return user?.profileImageUrl ?? userSearch?.thumbnailUrl
+    }
+    
+    private var broadcasterType: BroadcasterType? {
+        return user?.broadcasterType
+    }
+    
+    private var isSearch: Bool {
+        return userSearch != nil
+    }
     
     // Localization
     
@@ -31,32 +52,36 @@ struct SearchRowView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             
-            UserHeaderView(user: user, small: true)
-                .padding(.leading, Size.big.rawValue)
+            UserHeaderView(profileImageUrl: profileImageUrl, login: login, displayName: displayName, broadcasterType: broadcasterType, small: true)
+                .padding(.leading, isSearch && !added ? Size.none.rawValue : Size.big.rawValue)
                 .background(Color.secondaryColor)
-                .opacity(added ? 1 : UIConstants.kViewOpacity)
+                .opacity(isSearch ? 1 : (added ? 1 : UIConstants.kViewOpacity))
                 .cornerRadius(Size.big.rawValue)
                 .shadow(radius: Size.verySmall.rawValue)
                 .padding(.vertical, Size.small.rawValue)
             
-            ActionButton(image: Image(added ? "calendar-remove" : "calendar-add"), action: {
-                add()
-            })
-            .padding(.leading, Size.medium.rawValue)
-            .alert(isPresented: $showMaxStreamersAlert) { () -> Alert in
-                Alert(title: Text(maxStreamersAlertTitleText), message: Text(maxStreamersAlertTitleBody), dismissButton: .default(Text(okText)))
-            }
-            .alert(isPresented: $showRemoveStreamerAlert) { () -> Alert in
-                Alert(title: Text(String(format: removeStreamerAlertTitleText.localized, user.displayName ?? "")), message: Text(removeStreamerAlertTitleBody), primaryButton: .default(Text(okText), action: {
-                    save()
-                }), secondaryButton: .cancel(Text(cancelText)))
+            if (isSearch && added) || !isSearch {
+            
+                ActionButton(image: Image((isSearch && added) ? "calendar" : (added ? "calendar-remove" : "calendar-add")), padding: isSearch ? .extraSmall : .none, action: {
+                    add()
+                })
+                .padding(.leading, Size.medium.rawValue)
+                .disabled(isSearch)
+                .alert(isPresented: $showMaxStreamersAlert) { () -> Alert in
+                    Alert(title: Text(maxStreamersAlertTitleText), message: Text(maxStreamersAlertTitleBody), dismissButton: .default(Text(okText)))
+                }
+                .alert(isPresented: $showRemoveStreamerAlert) { () -> Alert in
+                    Alert(title: Text(String(format: removeStreamerAlertTitleText.localized, displayName ?? "")), message: Text(removeStreamerAlertTitleBody), primaryButton: .default(Text(okText), action: {
+                        save()
+                    }), secondaryButton: .cancel(Text(cancelText)))
+                }
             }
         }
         .listRowInsets(EdgeInsets())
         .padding(.horizontal, Size.medium.rawValue)
         .background(Color.secondaryBackgroundColor)
         .onAppear() {
-            if let login = user.login {
+            if let login = login {
                 added = Session.shared.user?.followedUsers?.contains(login) ?? false
             }
         }
@@ -78,17 +103,19 @@ struct SearchRowView: View {
     }
     
     private func save() {
-        added.toggle()
-        Session.shared.save(followedUser: user)
-        addAction()
+        if let user = user {
+            added.toggle()
+            Session.shared.save(followedUser: user)
+            addAction?()
+        }
     }
-    
+        
 }
 
 struct SearchRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SearchRowView(user: User(id: "1", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, descr: nil, profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", offlineImageUrl: nil, schedule: nil), addAction: {
+        SearchRowView(user: User(id: "1", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, descr: nil, profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", offlineImageUrl: nil, schedule: nil), userSearch: nil, addAction: {
             
             print("addAction")
         })

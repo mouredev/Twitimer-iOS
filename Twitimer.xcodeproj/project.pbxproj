@@ -18,7 +18,6 @@
 		AC275D3A267B99F300C92508 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC275D3C267B99F300C92508 /* Localizable.strings */; };
 		AC294770268324F900B28A46 /* TextFieldPlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */; };
 		AC2E2DFD267E31440091D5F5 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFC267E31440091D5F5 /* UserSearch.swift */; };
-		AC2E2DFF267E362E0091D5F5 /* SearchQueryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */; };
 		AC4FBBA726B031140045C63B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FBBA626B031140045C63B /* ActionButton.swift */; };
 		AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */; };
 		AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC839999263150A500F0E8F1 /* TwitimerApp.swift */; };
@@ -127,7 +126,6 @@
 		AC275D3D267B9B0B00C92508 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderStyle.swift; sourceTree = "<group>"; };
 		AC2E2DFC267E31440091D5F5 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
-		AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQueryRowView.swift; sourceTree = "<group>"; };
 		AC4FBBA626B031140045C63B /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleSegment.swift; sourceTree = "<group>"; };
 		AC839996263150A500F0E8F1 /* Twitimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -490,7 +488,6 @@
 			children = (
 				AC839A142631533C00F0E8F1 /* ScheduleRowView.swift */,
 				ACFCDD902631DF3100E9E270 /* SearchRowView.swift */,
-				AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */,
 				AC8CED5226334E3B0079DCBE /* TimerRowView.swift */,
 			);
 			path = Rows;
@@ -894,7 +891,6 @@
 				ACAB336526355DAD00AB8459 /* TwitchToken.swift in Sources */,
 				ACA1602726316A48005BB13E /* TextExtension.swift in Sources */,
 				ACD3ABE6263A0DE70066160E /* ChannelButton.swift in Sources */,
-				AC2E2DFF267E362E0091D5F5 /* SearchQueryRowView.swift in Sources */,
 				AC839A1D2631533C00F0E8F1 /* Constants.swift in Sources */,
 				AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */,
 			);
