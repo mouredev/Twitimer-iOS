@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserHeaderView: View {
+struct UserHeaderView: View, SettingsDelegate {
     
     // Properties
     
@@ -15,7 +15,7 @@ struct UserHeaderView: View {
     let login: String?
     let displayName: String?
     let broadcasterType: BroadcasterType?
-    let settings: UserSettings?
+    @State var settings: UserSettings?
     let isStreamer: Bool
     var small: Bool = false
     let readOnly: Bool
@@ -27,7 +27,7 @@ struct UserHeaderView: View {
         HStack(alignment: small ? .center : .top, spacing: Size.medium.rawValue) {
             
             if let url = profileImageUrl?.url {
-                UserAvatarView(url: url, user: login ?? "", size: small ? .veryBig : .gigant, settings: !readOnly, onClose: onClose)
+                UserAvatarView(url: url, user: login ?? "", size: small ? .veryBig : .gigant, settings: !readOnly, delegate: self)
             }
             
             VStack(alignment: .leading) {
@@ -83,6 +83,16 @@ struct UserHeaderView: View {
             }.foregroundColor(Color.lightColor)
             
         }.padding(Size.medium.rawValue)
+    }
+    
+    // MARK: SettingsDelegate
+    
+    func closeSession() {
+        onClose?()
+    }
+    
+     func updated(settings: UserSettings) {
+        self.settings = settings
     }
     
 }

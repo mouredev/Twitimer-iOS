@@ -90,8 +90,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsRouter.view(onClose: {
-            print("onClose")
-        })
+        SettingsRouter.view(delegate: nil)
     }
 }

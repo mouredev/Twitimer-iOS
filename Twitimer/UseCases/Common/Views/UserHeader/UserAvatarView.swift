@@ -8,13 +8,13 @@
 import SwiftUI
 import Kingfisher
 
-struct UserAvatarView: View {
+struct UserAvatarView: View, SettingsDelegate {
     
     let url: URL?
     let user: String
     let size: Size
     let settings: Bool
-    let onClose: (() -> Void)?
+    let delegate: SettingsDelegate?
     
     @State var settingsView = false
     
@@ -52,25 +52,33 @@ struct UserAvatarView: View {
             }
         }.sheet(isPresented: $settingsView) {
             NavigationView {
-                SettingsRouter.view {
-                    settingsView = false
-                    onClose?()
-                }.navigationBarTitle(Text(""), displayMode: .inline)
-                .navigationBarItems(leading: Button(action: {
-                    settingsView = false
-                }) {
-                    Image("cross").template
-                })
+                SettingsRouter.view(delegate: self)
+                    .navigationBarTitle(Text(""), displayMode: .inline)
+                    .navigationBarItems(leading: Button(action: {
+                        settingsView = false
+                    }) {
+                        Image("cross").template
+                    })
             }
         }
+    }
+    
+    // MARK: SettingsDelegate
+    
+    func closeSession() {
+        settingsView = false
+        delegate?.closeSession()
+    }
+    
+    func updated(settings: UserSettings) {
+        delegate?.updated(settings: settings)
     }
     
 }
 
 struct UserAvatarView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        UserAvatarView(url: URL(string: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png"), user: "mouredev", size: .gigant, settings: true, onClose: {
-            print("onClose")
-        })
+        UserAvatarView(url: URL(string: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png"), user: "mouredev", size: .gigant, settings: true, delegate: nil)
     }
 }

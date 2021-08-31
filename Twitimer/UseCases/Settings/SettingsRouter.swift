@@ -9,10 +9,10 @@ import Foundation
 
 final class SettingsRouter {
     
-    static func view(onClose: (() -> Void)?) -> SettingsView {
+    static func view(delegate: SettingsDelegate?) -> SettingsView {
         
         let router = SettingsRouter()
-        let viewModel = SettingsViewModel(router: router, onClose: onClose)
+        let viewModel = SettingsViewModel(router: router, delegate: delegate)
         let view = SettingsView(viewModel: viewModel)
 
         return view

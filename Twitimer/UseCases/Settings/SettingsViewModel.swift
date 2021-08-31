@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+protocol SettingsDelegate {
+    
+    func closeSession()
+    
+    func updated(settings: UserSettings)
+    
+}
+
 final class SettingsViewModel: ObservableObject {
     
     // Properties
@@ -16,7 +24,7 @@ final class SettingsViewModel: ObservableObject {
     @Published var settings: UserSettings
     let streamer = Session.shared.user?.streamer ?? false
     
-    private let onClose: (() -> Void)?
+    private let delegate: SettingsDelegate?
 
     // Localization
     
@@ -34,9 +42,9 @@ final class SettingsViewModel: ObservableObject {
     
     // Initialization
     
-    init(router: SettingsRouter, onClose: (() -> Void)?) {
+    init(router: SettingsRouter, delegate: SettingsDelegate?) {
         self.router = router
-        self.onClose = onClose  
+        self.delegate = delegate
         
         self.settings = Session.shared.user?.settings ?? UserSettings()
     }
@@ -50,7 +58,7 @@ final class SettingsViewModel: ObservableObject {
         Util.endEditing()
         
         Session.shared.revoke {
-            self.onClose?()
+            self.delegate?.closeSession()
         }
     }
     
@@ -62,6 +70,8 @@ final class SettingsViewModel: ObservableObject {
         
         // HACK: Para forzar la recarga de la vista
         settings = Session.shared.user?.settings ?? UserSettings()
+        
+        self.delegate?.updated(settings: settings)
     }
     
     func enableSave() -> Bool {
