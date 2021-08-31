@@ -39,7 +39,13 @@ struct Constants {
     static let kYouTubeMoureDevUri = "https://youtube.com/mouredevapps"
     static let kTwitterMoureDevUri = "https://twitter.com/mouredev"
     static let kInstagramMoureDevUri = "https://instagram.com/mouredev"
+    static let kTikTokMoureDevUri = "https://tiktok.com/@mouredev"
     static let kGitHubMoureDevUri = "https://github.com/mouredev"
+    static let discordUri = "https://discord.gg/"
+    static let youtubeUri = "https://youtube.com/"
+    static let twitterUri = "https://twitter.com/"
+    static let instagramUri = "https://instagram.com/"
+    static let tiktokUri = "https://tiktok.com/@"
     
 }
     

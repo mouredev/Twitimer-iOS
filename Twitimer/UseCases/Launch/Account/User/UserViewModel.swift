@@ -29,9 +29,7 @@ final class UserViewModel: ObservableObject {
     
     let scheduleText = "schedule".localizedKey
     let saveText = "schedule.save".localizedKey
-    let saveAlertText = "user.saveschedule.alert.body".localizedKey
-    let closeText = "user.closesession".localizedKey
-    let closeAlertText = "user.closesession.alert.body".localizedKey    
+    let saveAlertText = "user.saveschedule.alert.body".localizedKey 
     let streamerText = "user.streamer".localizedKey
     let syncAlertTitleText = "user.syncschedule.alert.title".localizedKey
     let syncAlertBodyText = "user.syncschedule.alert.body".localizedKey
@@ -51,10 +49,10 @@ final class UserViewModel: ObservableObject {
     
     // Public
     
-    func userView() -> UserHeaderView? {
+    func userView(isStreamer: Bool) -> UserHeaderView? {
         if let user = user ?? Session.shared.user {
             if user.login != nil {
-                return router.userHeaderView(user: user)
+                return router.userHeaderView(user: user, readOnly: readOnly, isStreamer: isStreamer, onClose: onClose)
             }
         }
         return nil
@@ -84,15 +82,6 @@ final class UserViewModel: ObservableObject {
         Util.endEditing()
         
         Session.shared.save(schedule: schedule)
-    }
-    
-    func close() {
-        
-        Util.endEditing()
-        
-        Session.shared.revoke {
-            self.onClose?()
-        }
     }
     
     func syncSchedule() {

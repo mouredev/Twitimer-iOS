@@ -14,7 +14,7 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     @State var onboarding = true
     @State var selection = 0
-    @State var modalInfo = false
+    @State var menuView = false
     
     // Body
     
@@ -49,7 +49,7 @@ struct HomeView: View {
                             .navigationBarTitle(viewModel.titleText).navigationBarTitleDisplayMode(.inline).accentColor(.primaryColor)
                             .toolbar {
                                 Button(action: {
-                                    modalInfo = true
+                                    menuView = true
                                 }) {
                                     Image("navigation-menu-horizontal").template.colorMultiply(.lightColor)
                                 }
@@ -67,12 +67,12 @@ struct HomeView: View {
                         }
                         .navigationViewStyle(StackNavigationViewStyle())
                         .opacity(viewModel.loading ? 0 : 1)
-                        .sheet(isPresented: $modalInfo) {
+                        .sheet(isPresented: $menuView) {
                             NavigationView {
                                 viewModel.menuView()
                                     .navigationBarTitle(Text(viewModel.titleText), displayMode: .inline)
                                     .navigationBarItems(leading: Button(action: {
-                                        modalInfo = false
+                                        menuView = false
                                     }) {
                                         Image("cross").template
                                     })

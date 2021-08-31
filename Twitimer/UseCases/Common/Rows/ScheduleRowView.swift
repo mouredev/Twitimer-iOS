@@ -19,8 +19,6 @@ struct ScheduleRowView: View {
     @Binding var title: String
     let readOnly: Bool
     
-    private let kTextLimit = 100
-    
     // Localization
     
     private let eventPlaceholderText = "schedule.event.placeholder".localizedKey
@@ -88,17 +86,7 @@ struct ScheduleRowView: View {
                     
                     if !readOnly || (readOnly && !title.isEmpty) {
                         
-                        TextField("", text: $title).onReceive(Just(title)) { _ in
-                            limitText(kTextLimit)
-                        }
-                        .modifier(TextFieldPlaceholderStyle(showPlaceHolder: title.isEmpty, placeholder: eventPlaceholderText))
-                        .font(size:.body)
-                        .foregroundColor(readOnly ? .lightColor : .textColor)
-                        .accentColor(readOnly ? .lightColor : .textColor)
-                        .padding(Size.small.rawValue)
-                        .background(readOnly ? Color.secondaryColor : Color.backgroundColor)
-                        .clipShape(Capsule())
-                        .disabled(!enable || readOnly)
+                        MainTextField(title: $title, placeholder: eventPlaceholderText, readOnly: readOnly, enable: enable)
                     }
                     
                 }.padding(.vertical, Size.medium.rawValue)
@@ -124,14 +112,6 @@ struct ScheduleRowView: View {
         .listRowInsets(EdgeInsets())
         .padding(.horizontal, Size.medium.rawValue)
         .background(Color.secondaryBackgroundColor)
-    }
-    
-    // MARK: Functions
-    
-    private func limitText(_ upper: Int) {
-        if title.count > upper {
-            title = String(title.prefix(upper))
-        }
     }
     
 }

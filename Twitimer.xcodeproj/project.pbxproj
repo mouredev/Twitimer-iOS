@@ -20,6 +20,11 @@
 		AC2E2DFD267E31440091D5F5 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFC267E31440091D5F5 /* UserSearch.swift */; };
 		AC4FBBA726B031140045C63B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FBBA626B031140045C63B /* ActionButton.swift */; };
 		AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */; };
+		AC63915426D6AAF1005E4DFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915326D6AAF1005E4DFE /* SettingsView.swift */; };
+		AC63915626D6AAFE005E4DFE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */; };
+		AC63915826D6AB0D005E4DFE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */; };
+		AC63915A26D6B19F005E4DFE /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915926D6B19F005E4DFE /* MainTextField.swift */; };
+		AC63915C26D6B9F3005E4DFE /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915B26D6B9F3005E4DFE /* IconTextField.swift */; };
 		AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC839999263150A500F0E8F1 /* TwitimerApp.swift */; };
 		AC83999E263150A500F0E8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC83999D263150A500F0E8F1 /* Assets.xcassets */; };
 		AC8399A1263150A500F0E8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8399A0263150A500F0E8F1 /* Preview Assets.xcassets */; };
@@ -68,6 +73,7 @@
 		ACA1602726316A48005BB13E /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1602626316A48005BB13E /* TextExtension.swift */; };
 		ACA1CEF7267BD1E2006414A0 /* easteregg3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ACA1CEF6267BD1E2006414A0 /* easteregg3.m4a */; };
 		ACAB336526355DAD00AB8459 /* TwitchToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB336426355DAD00AB8459 /* TwitchToken.swift */; };
+		ACB10F7D26D5831C005C66F9 /* UserHeaderNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */; };
 		ACC3650426348B0200B37735 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650326348B0200B37735 /* MenuView.swift */; };
 		ACC3650926348B1500B37735 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650826348B1500B37735 /* MenuViewModel.swift */; };
 		ACC3650E26348B2700B37735 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650D26348B2700B37735 /* MenuRouter.swift */; };
@@ -128,6 +134,11 @@
 		AC2E2DFC267E31440091D5F5 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		AC4FBBA626B031140045C63B /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleSegment.swift; sourceTree = "<group>"; };
+		AC63915326D6AAF1005E4DFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		AC63915926D6B19F005E4DFE /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		AC63915B26D6B9F3005E4DFE /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		AC839996263150A500F0E8F1 /* Twitimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC839999263150A500F0E8F1 /* TwitimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitimerApp.swift; sourceTree = "<group>"; };
 		AC83999D263150A500F0E8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +193,7 @@
 		ACA1602626316A48005BB13E /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
 		ACA1CEF6267BD1E2006414A0 /* easteregg3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = easteregg3.m4a; sourceTree = "<group>"; };
 		ACAB336426355DAD00AB8459 /* TwitchToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchToken.swift; sourceTree = "<group>"; };
+		ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderNetworkView.swift; sourceTree = "<group>"; };
 		ACC3650326348B0200B37735 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		ACC3650826348B1500B37735 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		ACC3650D26348B2700B37735 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
@@ -243,6 +255,16 @@
 				AC07A573267AA2950053B052 /* OnboardingPageView.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		AC63915226D6AACA005E4DFE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AC63915326D6AAF1005E4DFE /* SettingsView.swift */,
+				AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */,
+				AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AC83998D263150A500F0E8F1 = {
@@ -420,6 +442,7 @@
 				AC839A092631533C00F0E8F1 /* Countdown */,
 				AC839A112631533C00F0E8F1 /* Search */,
 				ACC364F22634821E00B37735 /* Account */,
+				AC63915226D6AACA005E4DFE /* Settings */,
 				AC839A122631533C00F0E8F1 /* Common */,
 			);
 			path = UseCases;
@@ -500,6 +523,8 @@
 				AC275D38267B93F400C92508 /* NavigationButton.swift */,
 				ACD3ABE5263A0DE70066160E /* ChannelButton.swift */,
 				AC4FBBA626B031140045C63B /* ActionButton.swift */,
+				AC63915926D6B19F005E4DFE /* MainTextField.swift */,
+				AC63915B26D6B9F3005E4DFE /* IconTextField.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -556,6 +581,7 @@
 				AC8681082631A9F600580B89 /* UserHeaderView.swift */,
 				AC8CED5726334FB00079DCBE /* UserAvatarView.swift */,
 				AC17BC0F2640C3AF00829690 /* UserBroadcasterTypeView.swift */,
+				ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */,
 			);
 			path = UserHeader;
 			sourceTree = "<group>";
@@ -847,13 +873,16 @@
 				ACEE88AE2635E159007E9473 /* FirebaseRCService.swift in Sources */,
 				AC8681222631ACDE00580B89 /* CountdownRouter.swift in Sources */,
 				AC07A574267AA2950053B052 /* OnboardingPageView.swift in Sources */,
+				AC63915626D6AAFE005E4DFE /* SettingsViewModel.swift in Sources */,
 				AC839A262631533C00F0E8F1 /* UserDefaultsProvider.swift in Sources */,
 				AC17BC102640C3AF00829690 /* UserBroadcasterTypeView.swift in Sources */,
 				AC839A272631533C00F0E8F1 /* TwitchService.swift in Sources */,
 				AC86810E2631ACB000580B89 /* SearchView.swift in Sources */,
 				AC839A312631533C00F0E8F1 /* UserView.swift in Sources */,
 				AC275D39267B93F400C92508 /* NavigationButton.swift in Sources */,
+				AC63915426D6AAF1005E4DFE /* SettingsView.swift in Sources */,
 				AC839A2F2631533C00F0E8F1 /* UserViewModel.swift in Sources */,
+				AC63915A26D6B19F005E4DFE /* MainTextField.swift in Sources */,
 				AC294770268324F900B28A46 /* TextFieldPlaceholderStyle.swift in Sources */,
 				AC86810126319BC300580B89 /* Util.swift in Sources */,
 				AC07A572267AA1680053B052 /* OnboardingTabView.swift in Sources */,
@@ -867,6 +896,7 @@
 				AC127C48267A6DA900B45CF1 /* Onboarding.swift in Sources */,
 				AC839A222631533C00F0E8F1 /* DateExtension.swift in Sources */,
 				AC8CED5326334E3B0079DCBE /* TimerRowView.swift in Sources */,
+				ACB10F7D26D5831C005C66F9 /* UserHeaderNetworkView.swift in Sources */,
 				ACC3650926348B1500B37735 /* MenuViewModel.swift in Sources */,
 				AC839A212631533C00F0E8F1 /* StringExtension.swift in Sources */,
 				AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */,
@@ -874,10 +904,12 @@
 				AC839A202631533C00F0E8F1 /* ColorExtension.swift in Sources */,
 				AC839A282631533C00F0E8F1 /* FirebaseRDBService.swift in Sources */,
 				AC95849426329B6500DE4314 /* InfoViewModel.swift in Sources */,
+				AC63915C26D6B9F3005E4DFE /* IconTextField.swift in Sources */,
 				AC8681132631ACB900580B89 /* SearchViewModel.swift in Sources */,
 				AC127C46267A69B200B45CF1 /* OnboardingRouter.swift in Sources */,
 				AC127C44267A69A800B45CF1 /* OnboardingViewModel.swift in Sources */,
 				AC127C42267A699700B45CF1 /* OnboardingView.swift in Sources */,
+				AC63915826D6AB0D005E4DFE /* SettingsRouter.swift in Sources */,
 				AC839A352631533C00F0E8F1 /* AccountViewModel.swift in Sources */,
 				ACD3ABF0263A2A9F0066160E /* CustomProgressView.swift in Sources */,
 				AC8CED5826334FB00079DCBE /* UserAvatarView.swift in Sources */,

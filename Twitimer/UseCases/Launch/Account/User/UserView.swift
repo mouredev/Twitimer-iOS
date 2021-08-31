@@ -13,7 +13,6 @@ struct UserView: View {
     
     @ObservedObject var viewModel: UserViewModel
     @State private var isStreamer = false
-    @State private var showCloseSessionAlert = false
     @State private var showSaveScheduleAlert = false
     @State private var showSyncScheduleAlert = false    
     
@@ -31,7 +30,7 @@ struct UserView: View {
                 // Header
                 
                 VStack {
-                    viewModel.userView()
+                    viewModel.userView(isStreamer: isStreamer)
                 }
                 
                 // List
@@ -103,17 +102,6 @@ struct UserView: View {
                     
                     HStack(spacing: Size.medium.rawValue) {
                         
-                        MainButton(text: viewModel.closeText, action: {
-                            showCloseSessionAlert.toggle()
-                        }, type: .secondary)
-                        .alert(isPresented: $showCloseSessionAlert) { () -> Alert in
-                            Alert(title: Text(viewModel.closeText), message: Text(viewModel.closeAlertText), primaryButton: .default(Text(viewModel.okText), action: {
-                                
-                                viewModel.close()
-                                
-                            }), secondaryButton: .cancel(Text(viewModel.cancelText)))
-                        }
-                        
                         if isStreamer {
                             
                             MainButton(text: viewModel.saveText, action: {
@@ -126,10 +114,11 @@ struct UserView: View {
                                     
                                 }), secondaryButton: .cancel(Text(viewModel.cancelText)))
                             }.enable(viewModel.enableSave())
-                            
+                            .padding(Size.medium.rawValue)
+                        } else {
+                            Spacer()
                         }
-                        
-                    }.padding(Size.medium.rawValue)
+                    }.if(!isStreamer) { $0.padding(Size.veryExtraSmall.rawValue) }
                     .background(Color.backgroundColor)
                     .shadow(radius: Size.verySmall.rawValue)
                 }

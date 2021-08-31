@@ -26,8 +26,8 @@ final class UserRouter {
         return view
     }
         
-    func userHeaderView(user: User) -> UserHeaderView {
-        return UserHeaderView(profileImageUrl: user.profileImageUrl, login: user.login, displayName: user.displayName, broadcasterType: user.broadcasterType)
+    func userHeaderView(user: User, readOnly: Bool, isStreamer: Bool, onClose: (() -> Void)?) -> UserHeaderView {
+        return UserHeaderView(profileImageUrl: user.profileImageUrl, login: user.login, displayName: user.displayName, broadcasterType: user.broadcasterType, settings: user.settings, isStreamer: isStreamer, readOnly: readOnly, onClose: onClose)
     }
     
     func infoView() -> InfoView {

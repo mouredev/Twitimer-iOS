@@ -27,6 +27,7 @@ struct User: Codable {
     var streamer: Bool?
     var schedule: [UserSchedule]?
     var followedUsers: [String]?
+    var settings: UserSettings?
     
     enum CodingKeys: String, CodingKey {
         
@@ -51,6 +52,7 @@ struct User: Codable {
                                   DatabaseField.followedUsers.rawValue:followedUsers ?? []]
         
         JSON[DatabaseField.schedule.rawValue] = scheduleToJSON()
+        JSON[DatabaseField.settings.rawValue] = settingsToJSON()
         
         return JSON
     }
@@ -63,6 +65,10 @@ struct User: Codable {
             scheduleJSON.append(updateUserSchedule.toJSON())
         }
         return scheduleJSON
+    }
+    
+    func settingsToJSON() -> [String:Any] {
+        return settings?.toJSON() ?? [:]
     }
     
     // Actualiza datos mutables del usuario. Esto ocurre cuando recuperamos de nuevo el usuario de Twitch para actualizarlo en Twitimer.
@@ -216,4 +222,30 @@ enum WeekdayType: Int, Codable, CaseIterable {
         }
     }
     
+}
+
+struct UserSettings: Codable, Equatable {
+    
+    var discord: String
+    var youtube: String
+    var twitter: String
+    var instagram: String
+    var tiktok: String
+    
+    func toJSON() -> [String:Any] {
+
+        return [DatabaseField.discord.rawValue:discord,
+                DatabaseField.youtube.rawValue:youtube,
+                DatabaseField.twitter.rawValue:twitter,
+                DatabaseField.instagram.rawValue:instagram,
+                DatabaseField.tiktok.rawValue:tiktok]
+    }
+    
+}
+
+// Empty UserSettings init
+extension UserSettings {
+    init() {
+        self.init(discord: "", youtube: "", twitter: "", instagram: "", tiktok: "")
+    }
 }

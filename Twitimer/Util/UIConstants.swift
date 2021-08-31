@@ -16,12 +16,16 @@ struct UIConstants {
 
 enum Size: CGFloat {
     case none = 0
+    case veryExtraSmall = 1
     case extraSmall = 2
     case verySmall = 4
     case small = 8
+    case smallMedium = 10
     case medium = 16
+    case mediumHalfBig = 20
     case mediumBig = 24
     case big = 32
+    case bigMedium = 36
     case veryBig = 40
     case gigant = 80
 }

@@ -102,6 +102,18 @@ final class Session {
             }
         }
     }
+    
+    func save(settings: UserSettings) {
+        
+        if user?.settings != settings {
+            user?.settings = settings
+            if let user = user {
+                UserDefaultsProvider.setCodable(key: .authUser, value: user)
+                FirebaseRDBService.shared.saveSettings(user: user)
+            }
+        }
+    }
+
 
     func save(followedUser: User) {
         
@@ -336,6 +348,7 @@ final class Session {
     private func mergeUsers(user: User, oldFollowers: Set<String>, success: @escaping () -> Void) {
         
         self.user?.schedule = user.schedule
+        self.user?.settings = user.settings
         
         // Merge followers
         let mergedFollowers = Array(oldFollowers.union(Set(user.followedUsers ?? [])))

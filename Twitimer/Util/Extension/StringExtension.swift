@@ -59,4 +59,9 @@ extension String {
             .replacingOccurrences(of: "]", with: "")
     }
     
+    func removeSocialInvalidCharacters() -> String {
+        return replacingOccurrences(of: "@", with: "")
+            .replacingOccurrences(of: " ", with: "")
+    }
+    
 }
