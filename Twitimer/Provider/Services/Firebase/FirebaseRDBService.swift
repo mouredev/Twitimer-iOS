@@ -14,6 +14,7 @@ enum DatabaseField: String {
     case streamer
     case schedule, enable, weekDay, date, duration, title // Schedule
     case followedUsers
+    case settings, discord, youtube, twitter, instagram, tiktok // Settings
 }
 
 final class FirebaseRDBService {
@@ -45,6 +46,13 @@ final class FirebaseRDBService {
 
         if let login = user.login {
             streamersRef.child(login).child(DatabaseField.schedule.rawValue).setValue(user.scheduleToJSON())
+        }
+    }
+    
+    func saveSettings(user: User) {
+
+        if let login = user.login {
+            streamersRef.child(login).child(DatabaseField.settings.rawValue).setValue(user.settingsToJSON())
         }
     }
 

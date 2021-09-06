@@ -10,7 +10,8 @@ import SwiftUI
 struct ActionButton: View {
     
     let image: Image
-    let action: () -> Void
+    var padding: Size = .none
+    let action: () -> Void    
     
     var body: some View {
         Button(action: {
@@ -18,6 +19,7 @@ struct ActionButton: View {
         }) {
             image.template.resizable()
                 .aspectRatio(contentMode: .fit)
+                .padding(padding.rawValue)
                 .frame(width: Size.mediumBig.rawValue, height: Size.mediumBig.rawValue)
                 .foregroundColor(.lightColor)
         }

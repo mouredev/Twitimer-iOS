@@ -18,18 +18,19 @@
 		AC275D3A267B99F300C92508 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC275D3C267B99F300C92508 /* Localizable.strings */; };
 		AC294770268324F900B28A46 /* TextFieldPlaceholderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */; };
 		AC2E2DFD267E31440091D5F5 /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFC267E31440091D5F5 /* UserSearch.swift */; };
-		AC2E2DFF267E362E0091D5F5 /* SearchQueryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */; };
 		AC4FBBA726B031140045C63B /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4FBBA626B031140045C63B /* ActionButton.swift */; };
 		AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */; };
-		AC7023BE26A6E7840040EDCA /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AC7023BD26A6E7840040EDCA /* IQKeyboardManagerSwift */; };
+		AC63915426D6AAF1005E4DFE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915326D6AAF1005E4DFE /* SettingsView.swift */; };
+		AC63915626D6AAFE005E4DFE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */; };
+		AC63915826D6AB0D005E4DFE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */; };
+		AC63915A26D6B19F005E4DFE /* MainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915926D6B19F005E4DFE /* MainTextField.swift */; };
+		AC63915C26D6B9F3005E4DFE /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC63915B26D6B9F3005E4DFE /* IconTextField.swift */; };
 		AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC839999263150A500F0E8F1 /* TwitimerApp.swift */; };
 		AC83999E263150A500F0E8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC83999D263150A500F0E8F1 /* Assets.xcassets */; };
 		AC8399A1263150A500F0E8F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC8399A0263150A500F0E8F1 /* Preview Assets.xcassets */; };
 		AC8399AC263150A500F0E8F1 /* TwitimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399AB263150A500F0E8F1 /* TwitimerTests.swift */; };
 		AC8399B7263150A500F0E8F1 /* TwitimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399B6263150A500F0E8F1 /* TwitimerUITests.swift */; };
 		AC8399C8263150FB00F0E8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399C7263150FB00F0E8F1 /* AppDelegate.swift */; };
-		AC8399DA2631518400F0E8F1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AC8399D92631518400F0E8F1 /* Alamofire */; };
-		AC8399E82631530F00F0E8F1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AC8399E72631530F00F0E8F1 /* Kingfisher */; };
 		AC839A1D2631533C00F0E8F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399ED2631533C00F0E8F1 /* Constants.swift */; };
 		AC839A1E2631533C00F0E8F1 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399EE2631533C00F0E8F1 /* UIConstants.swift */; };
 		AC839A1F2631533C00F0E8F1 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8399F02631533C00F0E8F1 /* ViewExtension.swift */; };
@@ -72,9 +73,20 @@
 		ACA1602726316A48005BB13E /* TextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1602626316A48005BB13E /* TextExtension.swift */; };
 		ACA1CEF7267BD1E2006414A0 /* easteregg3.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ACA1CEF6267BD1E2006414A0 /* easteregg3.m4a */; };
 		ACAB336526355DAD00AB8459 /* TwitchToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAB336426355DAD00AB8459 /* TwitchToken.swift */; };
+		ACB10F7D26D5831C005C66F9 /* UserHeaderNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */; };
 		ACC3650426348B0200B37735 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650326348B0200B37735 /* MenuView.swift */; };
 		ACC3650926348B1500B37735 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650826348B1500B37735 /* MenuViewModel.swift */; };
 		ACC3650E26348B2700B37735 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3650D26348B2700B37735 /* MenuRouter.swift */; };
+		ACCD6F5826CD370B0069E5E8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F5726CD370B0069E5E8 /* Alamofire */; };
+		ACCD6F5B26CD37280069E5E8 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F5A26CD37280069E5E8 /* IQKeyboardManagerSwift */; };
+		ACCD6F5E26CD38740069E5E8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F5D26CD38740069E5E8 /* FirebaseAnalytics */; };
+		ACCD6F6026CD38740069E5E8 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F5F26CD38740069E5E8 /* FirebaseRemoteConfig */; };
+		ACCD6F6226CD38740069E5E8 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6126CD38740069E5E8 /* FirebaseCrashlytics */; };
+		ACCD6F6426CD38740069E5E8 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6326CD38740069E5E8 /* FirebaseMessaging */; };
+		ACCD6F6626CD38740069E5E8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6526CD38740069E5E8 /* FirebaseAuth */; };
+		ACCD6F6826CD38740069E5E8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6726CD38740069E5E8 /* FirebaseDatabase */; };
+		ACCD6F6B26CD38B50069E5E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6A26CD38B50069E5E8 /* Kingfisher */; };
+		ACCD6F6E26CD38D30069E5E8 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = ACCD6F6D26CD38D30069E5E8 /* SwiftUIRefresh */; };
 		ACD3ABE6263A0DE70066160E /* ChannelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABE5263A0DE70066160E /* ChannelButton.swift */; };
 		ACD3ABEB263A28CA0066160E /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3ABE8263A28CA0066160E /* logo@3x.png */; };
 		ACD3ABEC263A28CA0066160E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACD3ABE9263A28CA0066160E /* logo.png */; };
@@ -82,12 +94,6 @@
 		ACD3ABF0263A2A9F0066160E /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD3ABEF263A2A9F0066160E /* CustomProgressView.swift */; };
 		ACD7C817267BC9FB00744EFD /* easteregg1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ACD7C815267BC9FB00744EFD /* easteregg1.m4a */; };
 		ACD7C818267BC9FB00744EFD /* easteregg2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = ACD7C816267BC9FB00744EFD /* easteregg2.m4a */; };
-		ACDE04822637681E00AFB371 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE04812637681E00AFB371 /* FirebaseAnalytics */; };
-		ACDE04842637681E00AFB371 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE04832637681E00AFB371 /* FirebaseCrashlytics */; };
-		ACDE04862637681E00AFB371 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE04852637681E00AFB371 /* FirebaseMessaging */; };
-		ACDE04882637681E00AFB371 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE04872637681E00AFB371 /* FirebaseAuth */; };
-		ACDE048A2637681E00AFB371 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE04892637681E00AFB371 /* FirebaseRemoteConfig */; };
-		ACDE048C2637681E00AFB371 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = ACDE048B2637681E00AFB371 /* FirebaseDatabase */; };
 		ACDE04B92637827B00AFB371 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACDE04B62637827B00AFB371 /* Inter-Light.ttf */; };
 		ACDE04BA2637827B00AFB371 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACDE04B72637827B00AFB371 /* Inter-Bold.ttf */; };
 		ACDE04BB2637827B00AFB371 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACDE04B82637827B00AFB371 /* Inter-Regular.ttf */; };
@@ -126,9 +132,13 @@
 		AC275D3D267B9B0B00C92508 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AC29476F268324F900B28A46 /* TextFieldPlaceholderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderStyle.swift; sourceTree = "<group>"; };
 		AC2E2DFC267E31440091D5F5 /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
-		AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchQueryRowView.swift; sourceTree = "<group>"; };
 		AC4FBBA626B031140045C63B /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		AC5FC0A2268EBC8B0001406B /* UserScheduleSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScheduleSegment.swift; sourceTree = "<group>"; };
+		AC63915326D6AAF1005E4DFE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		AC63915926D6B19F005E4DFE /* MainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTextField.swift; sourceTree = "<group>"; };
+		AC63915B26D6B9F3005E4DFE /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
 		AC839996263150A500F0E8F1 /* Twitimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC839999263150A500F0E8F1 /* TwitimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitimerApp.swift; sourceTree = "<group>"; };
 		AC83999D263150A500F0E8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +193,7 @@
 		ACA1602626316A48005BB13E /* TextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtension.swift; sourceTree = "<group>"; };
 		ACA1CEF6267BD1E2006414A0 /* easteregg3.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = easteregg3.m4a; sourceTree = "<group>"; };
 		ACAB336426355DAD00AB8459 /* TwitchToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchToken.swift; sourceTree = "<group>"; };
+		ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderNetworkView.swift; sourceTree = "<group>"; };
 		ACC3650326348B0200B37735 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		ACC3650826348B1500B37735 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		ACC3650D26348B2700B37735 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
@@ -207,15 +218,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC8399E82631530F00F0E8F1 /* Kingfisher in Frameworks */,
-				ACDE04882637681E00AFB371 /* FirebaseAuth in Frameworks */,
-				ACDE04842637681E00AFB371 /* FirebaseCrashlytics in Frameworks */,
-				ACDE048A2637681E00AFB371 /* FirebaseRemoteConfig in Frameworks */,
-				ACDE04862637681E00AFB371 /* FirebaseMessaging in Frameworks */,
-				AC7023BE26A6E7840040EDCA /* IQKeyboardManagerSwift in Frameworks */,
-				AC8399DA2631518400F0E8F1 /* Alamofire in Frameworks */,
-				ACDE048C2637681E00AFB371 /* FirebaseDatabase in Frameworks */,
-				ACDE04822637681E00AFB371 /* FirebaseAnalytics in Frameworks */,
+				ACCD6F6E26CD38D30069E5E8 /* SwiftUIRefresh in Frameworks */,
+				ACCD6F6426CD38740069E5E8 /* FirebaseMessaging in Frameworks */,
+				ACCD6F5826CD370B0069E5E8 /* Alamofire in Frameworks */,
+				ACCD6F5B26CD37280069E5E8 /* IQKeyboardManagerSwift in Frameworks */,
+				ACCD6F6B26CD38B50069E5E8 /* Kingfisher in Frameworks */,
+				ACCD6F6226CD38740069E5E8 /* FirebaseCrashlytics in Frameworks */,
+				ACCD6F5E26CD38740069E5E8 /* FirebaseAnalytics in Frameworks */,
+				ACCD6F6626CD38740069E5E8 /* FirebaseAuth in Frameworks */,
+				ACCD6F6826CD38740069E5E8 /* FirebaseDatabase in Frameworks */,
+				ACCD6F6026CD38740069E5E8 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +255,16 @@
 				AC07A573267AA2950053B052 /* OnboardingPageView.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		AC63915226D6AACA005E4DFE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AC63915326D6AAF1005E4DFE /* SettingsView.swift */,
+				AC63915526D6AAFE005E4DFE /* SettingsViewModel.swift */,
+				AC63915726D6AB0D005E4DFE /* SettingsRouter.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AC83998D263150A500F0E8F1 = {
@@ -420,6 +442,7 @@
 				AC839A092631533C00F0E8F1 /* Countdown */,
 				AC839A112631533C00F0E8F1 /* Search */,
 				ACC364F22634821E00B37735 /* Account */,
+				AC63915226D6AACA005E4DFE /* Settings */,
 				AC839A122631533C00F0E8F1 /* Common */,
 			);
 			path = UseCases;
@@ -488,7 +511,6 @@
 			children = (
 				AC839A142631533C00F0E8F1 /* ScheduleRowView.swift */,
 				ACFCDD902631DF3100E9E270 /* SearchRowView.swift */,
-				AC2E2DFE267E362E0091D5F5 /* SearchQueryRowView.swift */,
 				AC8CED5226334E3B0079DCBE /* TimerRowView.swift */,
 			);
 			path = Rows;
@@ -501,6 +523,8 @@
 				AC275D38267B93F400C92508 /* NavigationButton.swift */,
 				ACD3ABE5263A0DE70066160E /* ChannelButton.swift */,
 				AC4FBBA626B031140045C63B /* ActionButton.swift */,
+				AC63915926D6B19F005E4DFE /* MainTextField.swift */,
+				AC63915B26D6B9F3005E4DFE /* IconTextField.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -557,6 +581,7 @@
 				AC8681082631A9F600580B89 /* UserHeaderView.swift */,
 				AC8CED5726334FB00079DCBE /* UserAvatarView.swift */,
 				AC17BC0F2640C3AF00829690 /* UserBroadcasterTypeView.swift */,
+				ACB10F7C26D5831C005C66F9 /* UserHeaderNetworkView.swift */,
 			);
 			path = UserHeader;
 			sourceTree = "<group>";
@@ -666,15 +691,16 @@
 			);
 			name = Twitimer;
 			packageProductDependencies = (
-				AC8399D92631518400F0E8F1 /* Alamofire */,
-				AC8399E72631530F00F0E8F1 /* Kingfisher */,
-				ACDE04812637681E00AFB371 /* FirebaseAnalytics */,
-				ACDE04832637681E00AFB371 /* FirebaseCrashlytics */,
-				ACDE04852637681E00AFB371 /* FirebaseMessaging */,
-				ACDE04872637681E00AFB371 /* FirebaseAuth */,
-				ACDE04892637681E00AFB371 /* FirebaseRemoteConfig */,
-				ACDE048B2637681E00AFB371 /* FirebaseDatabase */,
-				AC7023BD26A6E7840040EDCA /* IQKeyboardManagerSwift */,
+				ACCD6F5726CD370B0069E5E8 /* Alamofire */,
+				ACCD6F5A26CD37280069E5E8 /* IQKeyboardManagerSwift */,
+				ACCD6F5D26CD38740069E5E8 /* FirebaseAnalytics */,
+				ACCD6F5F26CD38740069E5E8 /* FirebaseRemoteConfig */,
+				ACCD6F6126CD38740069E5E8 /* FirebaseCrashlytics */,
+				ACCD6F6326CD38740069E5E8 /* FirebaseMessaging */,
+				ACCD6F6526CD38740069E5E8 /* FirebaseAuth */,
+				ACCD6F6726CD38740069E5E8 /* FirebaseDatabase */,
+				ACCD6F6A26CD38B50069E5E8 /* Kingfisher */,
+				ACCD6F6D26CD38D30069E5E8 /* SwiftUIRefresh */,
 			);
 			productName = Twitimer;
 			productReference = AC839996263150A500F0E8F1 /* Twitimer.app */;
@@ -749,10 +775,11 @@
 			);
 			mainGroup = AC83998D263150A500F0E8F1;
 			packageReferences = (
-				AC8399D82631518400F0E8F1 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				AC8399E62631530F00F0E8F1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				AC7023BC26A6E7840040EDCA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				ACCD6F5626CD370B0069E5E8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				ACCD6F5926CD37280069E5E8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ACCD6F6926CD38B50069E5E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ACCD6F6C26CD38D30069E5E8 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = AC839997263150A500F0E8F1 /* Products */;
 			projectDirPath = "";
@@ -846,13 +873,16 @@
 				ACEE88AE2635E159007E9473 /* FirebaseRCService.swift in Sources */,
 				AC8681222631ACDE00580B89 /* CountdownRouter.swift in Sources */,
 				AC07A574267AA2950053B052 /* OnboardingPageView.swift in Sources */,
+				AC63915626D6AAFE005E4DFE /* SettingsViewModel.swift in Sources */,
 				AC839A262631533C00F0E8F1 /* UserDefaultsProvider.swift in Sources */,
 				AC17BC102640C3AF00829690 /* UserBroadcasterTypeView.swift in Sources */,
 				AC839A272631533C00F0E8F1 /* TwitchService.swift in Sources */,
 				AC86810E2631ACB000580B89 /* SearchView.swift in Sources */,
 				AC839A312631533C00F0E8F1 /* UserView.swift in Sources */,
 				AC275D39267B93F400C92508 /* NavigationButton.swift in Sources */,
+				AC63915426D6AAF1005E4DFE /* SettingsView.swift in Sources */,
 				AC839A2F2631533C00F0E8F1 /* UserViewModel.swift in Sources */,
+				AC63915A26D6B19F005E4DFE /* MainTextField.swift in Sources */,
 				AC294770268324F900B28A46 /* TextFieldPlaceholderStyle.swift in Sources */,
 				AC86810126319BC300580B89 /* Util.swift in Sources */,
 				AC07A572267AA1680053B052 /* OnboardingTabView.swift in Sources */,
@@ -866,6 +896,7 @@
 				AC127C48267A6DA900B45CF1 /* Onboarding.swift in Sources */,
 				AC839A222631533C00F0E8F1 /* DateExtension.swift in Sources */,
 				AC8CED5326334E3B0079DCBE /* TimerRowView.swift in Sources */,
+				ACB10F7D26D5831C005C66F9 /* UserHeaderNetworkView.swift in Sources */,
 				ACC3650926348B1500B37735 /* MenuViewModel.swift in Sources */,
 				AC839A212631533C00F0E8F1 /* StringExtension.swift in Sources */,
 				AC83999A263150A500F0E8F1 /* TwitimerApp.swift in Sources */,
@@ -873,10 +904,12 @@
 				AC839A202631533C00F0E8F1 /* ColorExtension.swift in Sources */,
 				AC839A282631533C00F0E8F1 /* FirebaseRDBService.swift in Sources */,
 				AC95849426329B6500DE4314 /* InfoViewModel.swift in Sources */,
+				AC63915C26D6B9F3005E4DFE /* IconTextField.swift in Sources */,
 				AC8681132631ACB900580B89 /* SearchViewModel.swift in Sources */,
 				AC127C46267A69B200B45CF1 /* OnboardingRouter.swift in Sources */,
 				AC127C44267A69A800B45CF1 /* OnboardingViewModel.swift in Sources */,
 				AC127C42267A699700B45CF1 /* OnboardingView.swift in Sources */,
+				AC63915826D6AB0D005E4DFE /* SettingsRouter.swift in Sources */,
 				AC839A352631533C00F0E8F1 /* AccountViewModel.swift in Sources */,
 				ACD3ABF0263A2A9F0066160E /* CustomProgressView.swift in Sources */,
 				AC8CED5826334FB00079DCBE /* UserAvatarView.swift in Sources */,
@@ -890,7 +923,6 @@
 				ACAB336526355DAD00AB8459 /* TwitchToken.swift in Sources */,
 				ACA1602726316A48005BB13E /* TextExtension.swift in Sources */,
 				ACD3ABE6263A0DE70066160E /* ChannelButton.swift in Sources */,
-				AC2E2DFF267E362E0091D5F5 /* SearchQueryRowView.swift in Sources */,
 				AC839A1D2631533C00F0E8F1 /* Constants.swift in Sources */,
 				AC5FC0A3268EBC8B0001406B /* UserScheduleSegment.swift in Sources */,
 			);
@@ -1084,7 +1116,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouredev.Twitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1110,7 +1142,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACH_O_TYPE = mh_execute;
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouredev.Twitimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1244,85 +1276,98 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AC7023BC26A6E7840040EDCA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		ACCD6F5626CD370B0069E5E8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
-			requirement = {
-				kind = exactVersion;
-				version = 6.5.6;
-			};
-		};
-		AC8399D82631518400F0E8F1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = exactVersion;
 				version = 5.4.3;
 			};
 		};
-		AC8399E62631530F00F0E8F1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		ACCD6F5926CD37280069E5E8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.6;
+			};
+		};
+		ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 8.6.0;
+			};
+		};
+		ACCD6F6926CD38B50069E5E8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = exactVersion;
-				version = 6.3.0;
+				version = 6.3.1;
 			};
 		};
-		ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		ACCD6F6C26CD38D30069E5E8 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
 			requirement = {
 				kind = exactVersion;
-				version = 8.2.0;
+				version = 0.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AC7023BD26A6E7840040EDCA /* IQKeyboardManagerSwift */ = {
+		ACCD6F5726CD370B0069E5E8 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC7023BC26A6E7840040EDCA /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		AC8399D92631518400F0E8F1 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AC8399D82631518400F0E8F1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = ACCD6F5626CD370B0069E5E8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		AC8399E72631530F00F0E8F1 /* Kingfisher */ = {
+		ACCD6F5A26CD37280069E5E8 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AC8399E62631530F00F0E8F1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			package = ACCD6F5926CD37280069E5E8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
-		ACDE04812637681E00AFB371 /* FirebaseAnalytics */ = {
+		ACCD6F5D26CD38740069E5E8 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
 		};
-		ACDE04832637681E00AFB371 /* FirebaseCrashlytics */ = {
+		ACCD6F5F26CD38740069E5E8 /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		ACDE04852637681E00AFB371 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		ACDE04872637681E00AFB371 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		ACDE04892637681E00AFB371 /* FirebaseRemoteConfig */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
 		};
-		ACDE048B2637681E00AFB371 /* FirebaseDatabase */ = {
+		ACCD6F6126CD38740069E5E8 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ACDE04802637681E00AFB371 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		ACCD6F6326CD38740069E5E8 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		ACCD6F6526CD38740069E5E8 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		ACCD6F6726CD38740069E5E8 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCD6F5C26CD38740069E5E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		ACCD6F6A26CD38B50069E5E8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCD6F6926CD38B50069E5E8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		ACCD6F6D26CD38D30069E5E8 /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACCD6F6C26CD38D30069E5E8 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

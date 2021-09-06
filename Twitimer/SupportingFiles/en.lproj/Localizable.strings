@@ -61,7 +61,7 @@
 "user.closesession.alert.body" = "Are you sure you want to log out?";
 "user.saveschedule.alert.body" = "If you save these new schedules, your viewers will be notified.";
 "user.seechannel" = "See channel";
-"user.streamer" = "I'm streamer";
+"user.streamer" = "I'm a streamer";
 "user.syncschedule.alert.title" = "Synchronize Twitch schedule";
 "user.syncschedule.alert.body" = "Do you want to sync your recurring Twitch calendar? The Twitimer schedule will be overwritten.";
 
@@ -82,7 +82,7 @@
 "info.channel.share" = "Hello @[%@]! Do you know #Twitimer?\n\nIt is an App for streamers to add their broadcast schedules on Twitch and notify their audience every time they do.\n\nIt can be downloaded for iOS and Android for free from https://twitimer.com\n\nThank you!";
 
 "info.streamer.title" = "Are you a streamer?";
-"info.streamer.body" = "If you make live broadcasts, activate the option \"I'm streamer\" to configure your schedules and notify viewers.";
+"info.streamer.body" = "If you make live broadcasts, activate the option \"I'm a streamer\" to configure your schedules, social media and notify viewers.";
 "info.streamer.advice.1" = "Set, update and save the schedules of your weekly broadcasts and specific events.";
 
 "info.auth.title" = "Log in securely with your Twitch account";
@@ -100,3 +100,13 @@
 "menu.site" = "Visit twitimer.com to check all the official information";
 "menu.onboarding" = "Visualize the welcome tutorial again";
 "menu.version" = "Version %@. Twitimer has no relationship with Twitch Interactive, Inc. and all of its services.";
+
+// Settings
+
+"settings.socialmedia" = "Social media";
+"settings.discord.placeholder" = "Discord invitation link code";
+"settings.youtube.placeholder" = "YouTube user";
+"settings.twitter.placeholder" = "Twitter user";
+"settings.instagram.placeholder" = "Instagram user";
+"settings.tiktok.placeholder" = "TikTok user";
+"settings.savesettings" = "Save settings";

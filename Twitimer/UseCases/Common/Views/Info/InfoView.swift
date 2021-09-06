@@ -76,7 +76,7 @@ struct InfoView: View {
                             Image("calendar").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
                             Text(viewModel.advice(number: 1)).font(size: .caption, type: .light).foregroundColor(.textColor)
                             Spacer()
-                        }
+                        }.padding(.bottom, Size.big.rawValue)
                         
                     } else if viewModel.type == .schedule {
                                                 
@@ -95,7 +95,7 @@ struct InfoView: View {
 
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
-        InfoRouter.view(type: .channel, extra: "Ibai")
+        InfoRouter.view(type: .streamer, extra: "Ibai")
         InfoRouter.view(type: .schedule).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

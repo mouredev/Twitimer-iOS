@@ -82,7 +82,7 @@
 "info.channel.share" = "¡Hola @[%@]! ¿Conoces #Twitimer?\n\nEs una App para que los streamers puedan añadir sus horarios de emisión en Twitch y notificar a su audiencia cada vez que hagan.\n\nSe puede descargar para iOS y Android de forma gratuita desde https://twitimer.com\n\n¡Gracias!";
 
 "info.streamer.title" = "¿Eres streamer?";
-"info.streamer.body" = "Si realizas transmisiones en directo activa la opción \"Soy streamer\" para configurar tus horarios y notificar a los espectadores.";
+"info.streamer.body" = "Si realizas transmisiones en directo activa la opción \"Soy streamer\" para configurar tus horarios, redes sociales y notificar a los espectadores.";
 "info.streamer.advice.1" = "Establece, actualiza y guarda los horarios de tus transmisiones semanales y eventos puntuales.";
 
 "info.auth.title" = "Inicia sesión de forma segura con tu cuenta de Twitch";
@@ -100,3 +100,13 @@
 "menu.site" = "Visita twitimer.com para consultar toda la información oficial";
 "menu.onboarding" = "Visualiza de nuevo el tutorial de bienvenida";
 "menu.version" = "Versión %@. Twitimer no posee ningún tipo de relación con Twitch Interactive, Inc. y todos sus servicios.";
+
+// Settings
+
+"settings.socialmedia" = "Redes sociales";
+"settings.discord.placeholder" = "Código de invitación de Discord";
+"settings.youtube.placeholder" = "Usuario de YouTube";
+"settings.twitter.placeholder" = "Usuario de Twitter";
+"settings.instagram.placeholder" = "Usuario de Instagram";
+"settings.tiktok.placeholder" = "Usuario de TikTok";
+"settings.savesettings" = "Guardar ajustes";

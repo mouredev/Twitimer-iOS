@@ -29,7 +29,7 @@ struct TimerRowView: View {
                 
                 HStack(alignment: .top, spacing: Size.small.rawValue) {
                     
-                    UserAvatarView(url: streaming.streamer.profileImageUrl?.url, user: streaming.streamer.login ?? "", size: .veryBig)
+                    UserAvatarView(url: streaming.streamer.profileImageUrl?.url, user: streaming.streamer.login ?? "", size: .veryBig, settings: false, delegate: nil)
                     
                     VStack(alignment: .leading, spacing: Size.verySmall.rawValue) {
                         

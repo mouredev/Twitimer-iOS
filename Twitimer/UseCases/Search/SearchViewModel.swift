@@ -28,7 +28,7 @@ final class SearchViewModel: ObservableObject {
     
     @Published private(set) var loading = false
     @Published private(set) var users: [User] = Session.shared.streamers ?? []
-    @Published private(set) var streamersCount: Int = Session.shared.user?.followedUsers?.count ?? 0
+    @Published private(set) var streamersCount: Int = Session.shared.streamers?.count ?? 0
     @Published private(set) var search: [UserSearch] = []
     
     // Initialization
@@ -124,6 +124,7 @@ final class SearchViewModel: ObservableObject {
         search = []
         found = false
         users = Session.shared.streamers ?? []
+        streamersCount = users.count
     }
     
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 enum Network: String, CaseIterable {
     
-    case twitch, discord, youtube, twitter, instagram, github
+    case twitch, discord, youtube, twitter, instagram, tiktok, github
     
     var uri: String {
         switch self {
@@ -23,6 +23,8 @@ enum Network: String, CaseIterable {
             return Constants.kTwitterMoureDevUri
         case .instagram:
             return Constants.kInstagramMoureDevUri
+        case .tiktok:
+            return Constants.kTikTokMoureDevUri
         case .github:
             return Constants.kGitHubMoureDevUri
         }

@@ -19,6 +19,7 @@ struct DatabaseUser: Codable {
     let streamer: Int?
     let schedule: [DatabaseUserSchedule]?
     let followedUsers: [String]?
+    let settings: DatabaseUserSettings?
     
     func toUser() -> User {
         
@@ -26,7 +27,7 @@ struct DatabaseUser: Codable {
             return dbSchedule.toUserSchedule()
         })
         
-        return User(id: id, login: login, displayName: displayName, broadcasterType: BroadcasterType(rawValue: broadcasterType ?? ""), descr: descr, profileImageUrl: profileImageUrl, offlineImageUrl: offlineImageUrl, streamer: streamer == 1,schedule: schedule, followedUsers: followedUsers ?? [])
+        return User(id: id, login: login, displayName: displayName, broadcasterType: BroadcasterType(rawValue: broadcasterType ?? ""), descr: descr, profileImageUrl: profileImageUrl, offlineImageUrl: offlineImageUrl, streamer: streamer == 1,schedule: schedule, followedUsers: followedUsers ?? [], settings: settings?.toUserSettings())
     }
     
 }
@@ -43,6 +44,21 @@ struct DatabaseUserSchedule: Codable {
         let weekDayType = WeekdayType(rawValue: weekDay ?? 0) ?? .custom
         let date = date?.toDate()
         return UserSchedule(enable: enable == 1, weekDay: weekDayType, currentWeekDay: weekDayType, date: date ?? Date(), duration: duration ?? 1, title: title ?? "")
+    }
+    
+}
+
+struct DatabaseUserSettings: Codable {
+    
+    var discord: String?
+    var youtube: String?
+    var twitter: String?
+    var instagram: String?
+    var tiktok: String?
+    
+    func toUserSettings() -> UserSettings {
+
+        return UserSettings(discord: discord ?? "", youtube: youtube ?? "", twitter: twitter ?? "", instagram: instagram ?? "", tiktok: tiktok ?? "")
     }
     
 }
