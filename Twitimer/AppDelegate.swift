@@ -42,24 +42,39 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         application.applicationIconBadgeNumber = 0
         
         // UINavigationBar
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = Color.primaryColor.uiColor
-        UINavigationBar.appearance().tintColor = Color.lightColor.uiColor
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().titleTextAttributes = [
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.backgroundImage = UIImage()
+        navigationBarAppearance.backgroundColor = Color.primaryColor.uiColor
+        navigationBarAppearance.shadowImage = UIImage()
+        navigationBarAppearance.shadowColor = .clear
+        navigationBarAppearance.titleTextAttributes = [
             .foregroundColor: Color.lightColor.uiColor,
             .font: UIFont(descriptor: UIFontDescriptor(name: FontType.bold.rawValue, size: FontSize.head.rawValue), size: FontSize.head.rawValue)
         ]
-        
+
         let backIndicatorImage = UIImage(named: "keyboard-arrow-left")
-        UINavigationBar.appearance().backIndicatorImage = backIndicatorImage
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backIndicatorImage
+        navigationBarAppearance.setBackIndicatorImage(backIndicatorImage, transitionMaskImage: backIndicatorImage)
+        
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
         // UITabBar (TabView)
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundImage = UIImage()
+        tabBarAppearance.backgroundColor = Color.backgroundColor.uiColor
+        tabBarAppearance.shadowImage = UIImage()
+        tabBarAppearance.shadowColor = .clear
+        tabBarAppearance.selectionIndicatorTintColor = Color.primaryColor.uiColor
+        
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = Color.backgroundColor.uiColor
-        UITabBar.appearance().tintColor = Color.primaryColor.uiColor
         UITabBar.appearance().clipsToBounds = true // Remove top line
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
         
         // UITableView (List)
         UITableView.appearance().backgroundColor = Color.secondaryBackgroundColor.uiColor

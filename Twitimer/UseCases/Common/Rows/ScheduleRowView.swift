@@ -62,14 +62,18 @@ struct ScheduleRowView: View {
                     HStack(spacing: Size.verySmall.rawValue) {
                         
                         if type == .custom {
-                            DatePicker("", selection: $date, displayedComponents: [.date, .hourAndMinute]).labelsHidden().datePickerStyle(CompactDatePickerStyle())
+                            DatePicker("", selection: $date, displayedComponents: [.date, .hourAndMinute]).labelsHidden()
+                                .datePickerStyle(.compact)
                                 .accentColor(readOnly ? .lightColor : .primaryColor)
+                                .colorScheme(.dark) // FIXME: Hack para que se vea el texto en blanco. No funciona accentColor en iOS 15
                                 .padding(Size.verySmall.rawValue).disabled(!enable || readOnly)
                         } else {
                             
                             Image("time-clock-circle").templateIcon().foregroundColor(Color.lightColor)
                             
-                            DatePicker("", selection: $date, displayedComponents: .hourAndMinute).labelsHidden().datePickerStyle(CompactDatePickerStyle()).accentColor(.lightColor).disabled(!enable || readOnly)
+                            DatePicker("", selection: $date, displayedComponents: .hourAndMinute).labelsHidden().datePickerStyle(.compact).accentColor(.lightColor)
+                                .colorScheme(.dark) // FIXME: Hack para que se vea el texto en blanco. No funciona accentColor en iOS 15
+                                .disabled(!enable || readOnly)
                         }
                         
                         Image("hourglass").templateIcon().foregroundColor(Color.lightColor)
@@ -79,7 +83,9 @@ struct ScheduleRowView: View {
                                 Text("+\($0)h").foregroundColor(.textColor)
                             }
                         }.font(size: .body)
-                        .foregroundColor(.lightColor).pickerStyle(MenuPickerStyle()).disabled(!enable || readOnly)
+                        .accentColor(.lightColor)
+                        .pickerStyle(MenuPickerStyle())
+                        .disabled(!enable || readOnly)
                         .opacity(readOnly ? UIConstants.kViewOpacity : 1)
                         
                     }.frame(height: Size.big.rawValue)

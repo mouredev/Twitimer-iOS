@@ -1281,7 +1281,7 @@
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = exactVersion;
-				version = 5.4.3;
+				version = 5.4.4;
 			};
 		};
 		ACCD6F5926CD37280069E5E8 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
@@ -1297,7 +1297,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = exactVersion;
-				version = 8.6.0;
+				version = 8.7.0;
 			};
 		};
 		ACCD6F6926CD38B50069E5E8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -1305,7 +1305,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = exactVersion;
-				version = 6.3.1;
+				version = 7.0.0;
 			};
 		};
 		ACCD6F6C26CD38D30069E5E8 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {

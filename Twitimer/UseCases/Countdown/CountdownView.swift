@@ -23,7 +23,7 @@ struct CountdownView: View {
                 
                 // Header
                 
-                VStack(alignment: .leading, spacing: Size.none.rawValue) {                    
+                VStack(alignment: .leading, spacing: Size.none.rawValue) {
                     
                     if viewModel.streamings.isEmpty {
                         
@@ -36,24 +36,27 @@ struct CountdownView: View {
                         // List
                         
                         Text(viewModel.upcomingText).font(size: .head).foregroundColor(.textColor).padding(Size.medium.rawValue)
-
+                        
                         List {
                             ForEach(viewModel.streamings, id: \.streamer.id) { streaming in
                                 ZStack {
                                     NavigationLink(destination: UserRouter.readOnlyView(user: streaming.streamer)) {}.opacity(0)
                                     TimerRowView(streaming: streaming, endDate:
                                                     streaming.schedule.date)
-                                }.listRowInsets(EdgeInsets()).background(Color.backgroundColor)
+                                }
+                                .hideTableSeparator()
+                                .background(Color.backgroundColor)
                             }
-                        }.pullToRefresh(isShowing: $isShowingRefresh) {
-                            isShowingRefresh = false
-                            viewModel.reload()
-                        }
+                        }.listStyle(.plain)
+                            .pullToRefresh(isShowing: $isShowingRefresh) {
+                                isShowingRefresh = false
+                                viewModel.reload()
+                            }
                     }
                 }.background(Color.secondaryBackgroundColor)
-                .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
-                .shadow(radius: Size.verySmall.rawValue)
-                .padding(.top, Size.medium.rawValue)
+                    .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
+                    .shadow(radius: Size.verySmall.rawValue)
+                    .padding(.top, Size.medium.rawValue)
                 
                 // Buttons
                 
@@ -64,13 +67,13 @@ struct CountdownView: View {
                     }, type: .secondary)
                     
                 }.padding(Size.medium.rawValue)
-                .background(Color.backgroundColor)
-                .shadow(radius: Size.verySmall.rawValue)
+                    .background(Color.backgroundColor)
+                    .shadow(radius: Size.verySmall.rawValue)
                 
             }.background(Color.primaryColor)
-            .onAppear() {
-                viewModel.data()
-            }
+                .onAppear() {
+                    viewModel.data()
+                }
             
             if viewModel.loading {
                 CustomProgressView()
