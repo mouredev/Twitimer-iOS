@@ -85,8 +85,7 @@ struct ScheduleRowView: View {
                         }.font(size: .body)
                         .accentColor(.lightColor)
                         .pickerStyle(MenuPickerStyle())
-                        .disabled(!enable || readOnly)
-                        .opacity(readOnly ? UIConstants.kViewOpacity : 1)
+                        .allowsHitTesting(!(!enable || readOnly))
                         
                     }.frame(height: Size.big.rawValue)
                     
@@ -125,6 +124,6 @@ struct ScheduleRowView: View {
 struct ScheduleRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ScheduleRowView(type: .custom, enable: .constant(true), date: .constant(Date()), duration: .constant(1), title: .constant(""), readOnly: false)
+        ScheduleRowView(type: .custom, enable: .constant(true), date: .constant(Date()), duration: .constant(1), title: .constant(""), readOnly: true)
     }
 }
