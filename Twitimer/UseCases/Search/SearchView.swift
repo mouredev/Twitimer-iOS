@@ -24,7 +24,7 @@ struct SearchView: View {
                 // Header
                 
                 HStack(spacing: Size.none.rawValue) {
-                                        
+                    
                     Image("search").template
                         .resizable().frame(width: Size.mediumBig.rawValue, height: Size.mediumBig.rawValue)
                         .foregroundColor(Color.textColor)
@@ -81,20 +81,19 @@ struct SearchView: View {
                         
                         // List
                         
-                        if let search = viewModel.search, !search.isEmpty {
-                            List {
+                        List {
+                            if let search = viewModel.search, !search.isEmpty {
                                 ForEach(search, id: \.id) { user in
                                     SearchRowView(user: nil, userSearch: user, addAction: nil)
-                                        .listRowInsets(EdgeInsets()).background(Color.backgroundColor)
+                                        .hideTableSeparator()
+                                        .background(Color.backgroundColor)
                                         .onTapGesture {
                                             if let user = user.broadcasterLogin {
                                                 viewModel.search(user: user)
                                             }
                                         }
                                 }
-                            }
-                        } else {
-                            List {
+                            } else {
                                 ForEach(viewModel.users, id: \.id) { user in
                                     ZStack {
                                         NavigationLink(destination: UserRouter.readOnlyView(user: user)) {}.opacity(0)
@@ -102,14 +101,16 @@ struct SearchView: View {
                                             text = ""
                                             viewModel.updateCount()
                                         })
-                                    }.listRowInsets(EdgeInsets()).background(Color.backgroundColor)
+                                    }
+                                    .hideTableSeparator()
+                                    .background(Color.backgroundColor)
                                 }
                             }
-                        }
+                        }.listStyle(.plain)
                     }
                 }.background(Color.secondaryBackgroundColor)
-                .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
-                .shadow(radius: Size.verySmall.rawValue)
+                    .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
+                    .shadow(radius: Size.verySmall.rawValue)
                 
                 // Buttons
                 
@@ -127,8 +128,8 @@ struct SearchView: View {
                     }, type: .primary).enable(enableSearch())
                     
                 }.padding(Size.medium.rawValue)
-                .background(Color.backgroundColor)
-                .shadow(radius: Size.verySmall.rawValue)
+                    .background(Color.backgroundColor)
+                    .shadow(radius: Size.verySmall.rawValue)
                 
             }
             .background(Color.primaryColor)
@@ -149,11 +150,11 @@ struct SearchView: View {
     
     private func enableCancel() -> Bool {
         return isEditing
-            || (!isEditing && !viewModel.search.isEmpty)
-            || (!isEditing && !viewModel.users.isEmpty && viewModel.found)
-            || (!isEditing && viewModel.users.isEmpty && viewModel.search.isEmpty)
+        || (!isEditing && !viewModel.search.isEmpty)
+        || (!isEditing && !viewModel.users.isEmpty && viewModel.found)
+        || (!isEditing && viewModel.users.isEmpty && viewModel.search.isEmpty)
     }
-        
+    
     private func enableSearch() -> Bool {
         return !text.isEmpty
     }

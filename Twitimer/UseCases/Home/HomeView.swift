@@ -51,7 +51,7 @@ struct HomeView: View {
                                 Button(action: {
                                     menuView = true
                                 }) {
-                                    Image("navigation-menu-horizontal").template.colorMultiply(.lightColor)
+                                    Image("navigation-menu-horizontal").template.foregroundColor(.lightColor)
                                 }
                             }
                             .onAppear() {
@@ -67,6 +67,7 @@ struct HomeView: View {
                         }
                         .navigationViewStyle(StackNavigationViewStyle())
                         .opacity(viewModel.loading ? 0 : 1)
+                        .accentColor(.lightColor)
                         .sheet(isPresented: $menuView) {
                             NavigationView {
                                 viewModel.menuView()
@@ -74,7 +75,7 @@ struct HomeView: View {
                                     .navigationBarItems(leading: Button(action: {
                                         menuView = false
                                     }) {
-                                        Image("cross").template
+                                        Image("cross").template.foregroundColor(.lightColor)
                                     })
                             }
                         }

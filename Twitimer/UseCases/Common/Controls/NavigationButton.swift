@@ -22,7 +22,7 @@ struct NavigationButton: View {
                 }
                 Spacer()
                 Image(systemName: "chevron.right")
-                    .foregroundColor(.secondaryColor)
+                    .foregroundColor(.primaryColor)
             }.padding(.bottom, Size.medium.rawValue)
             Divider()
         }
@@ -33,6 +33,6 @@ struct NavigationButton_Previews: PreviewProvider {
     static var previews: some View {
         NavigationButton(text: "Text".localizedKey, action: {
             print("NavigationButton action")
-        }).background(Color.primaryColor)
+        }).background(Color.backgroundColor)
     }
 }

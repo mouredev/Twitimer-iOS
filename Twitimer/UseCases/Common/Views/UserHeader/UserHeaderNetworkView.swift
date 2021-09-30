@@ -37,7 +37,8 @@ struct UserHeaderNetworkView: View {
         case .instagram:
             url = "\(Constants.instagramUri)\(networkId)"
         case .tiktok:
-            url = "\(Constants.tiktokUri)\(networkId)"
+            // Pasamos el user a minus ya que la App de TikTok es case sensitive
+            url = "\(Constants.tiktokUri)\(networkId.lowercased())"
         case .github, .twitch:
             // No soportadas
             break

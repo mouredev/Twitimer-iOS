@@ -24,6 +24,15 @@ extension View {
         else { self }
     }
     
+    // MARK: iOS 15
+    
+    func hideTableSeparator() -> AnyView {
+        if #available(iOS 15.0, *) {
+            return AnyView(self.listRowSeparator(.hidden).listRowInsets(EdgeInsets()))
+        }
+        return AnyView(self.listRowInsets(EdgeInsets()))
+    }
+    
 }
 
 private struct RoundedCorner: Shape {

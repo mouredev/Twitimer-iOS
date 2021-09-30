@@ -85,8 +85,9 @@ struct UserView: View {
                                                     duration: $viewModel.schedule[index].duration,
                                                     title: $viewModel.schedule[index].title,
                                                     readOnly: viewModel.readOnly)
+                                        .hideTableSeparator()
                                 }
-                            }
+                            }.listStyle(.plain)
                         }
                     } else {
                         viewModel.infoView()

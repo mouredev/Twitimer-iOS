@@ -57,7 +57,7 @@ struct UserAvatarView: View, SettingsDelegate {
                     .navigationBarItems(leading: Button(action: {
                         settingsView = false
                     }) {
-                        Image("cross").template
+                        Image("cross").template.foregroundColor(.lightColor)
                     })
             }
         }
