@@ -91,7 +91,7 @@ final class TwitchService {
         }
     }
     
-    func user(retry: Bool = false, success: @escaping (_ user: User) -> Void, failure: @escaping (_ error: Error?) -> Void) {
+    func user(retry: Bool = false, success: @escaping (_ user: User) -> Void, failure: @escaping (_ error: Error?) -> Void, authFailure: @escaping (_ error: Error?) -> Void) {
         
         guard let url = TwitchServiceAPI.user.url() else {
             failure(nil)
@@ -102,12 +102,17 @@ final class TwitchService {
             
             if let user = response.value?.data?.first {
                 success(user)
-            } else if response.response?.statusCode == self.kAuthErrorStatusCode, let token = Session.shared.token?.refreshToken, !retry {
-                self.refreshToken(refreshToken: token) {
-                    // Retry
-                    self.user(retry: true, success: success, failure: failure)
-                } failure: { (error) in
-                    failure(error)
+            } else if response.response?.statusCode == self.kAuthErrorStatusCode {
+                if let token = Session.shared.token?.refreshToken, !retry {
+                    self.refreshToken(refreshToken: token) {
+                        // Retry
+                        self.user(retry: true, success: success, failure: failure, authFailure: authFailure)
+                    } failure: { (error) in
+                        failure(error)
+                    }
+                } else {
+                    // Close session
+                    authFailure(response.error)
                 }
             } else {
                 failure(response.error)
