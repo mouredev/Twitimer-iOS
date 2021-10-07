@@ -75,7 +75,7 @@ final class Session {
                         }
                     }
                 }
-            }, failure: failure)
+            }, failure: failure, authFailure: failure)
         }, failure: failure)
     }
     
@@ -83,11 +83,9 @@ final class Session {
         
         if let accessToken = token?.accessToken {
             TwitchService.shared.revoke(accessToken: accessToken) {
-                self.clear()
-                success()
+                self.clear(completion: success)
             } failure: { (_) in
-                self.clear()
-                success()
+                self.clear(completion: success)
             }
         }
     }
@@ -165,6 +163,8 @@ final class Session {
                 
             } failure: { (_) in
                 self.reloadUser(completion: completion)
+            } authFailure: { (_) in
+                self.clear(completion: completion)
             }
         }
     }
@@ -417,7 +417,7 @@ final class Session {
         }
     }
     
-    private func clear() {
+    private func clear(completion: @escaping () -> Void) {
         
         user?.followedUsers?.forEach({ (user) in
             self.setupNotification(add: false, topic: user)
@@ -435,14 +435,14 @@ final class Session {
         // Firebase Auth
         do {
             try Auth.auth().signOut()
-            firebaseAuth()
+            firebaseAuth(completion: completion)
         } catch let error as NSError {
             print ("Error signing out from Firebase: %@", error)
-            firebaseAuth()
+            firebaseAuth(completion: completion)
         }
     }
     
-    private func firebaseAuth(completion: (() -> Void)? = nil) {
+    private func firebaseAuth(completion: @escaping () -> Void) {
         
         // Firebase auth anónima y permanente para poder realizar operaciones autenticadas contra Firebase
         // TODO: Intentar integrar Twitch como sistema OAuth personalizado en Firebase
@@ -451,10 +451,10 @@ final class Session {
                 guard let user = authResult?.user else { return }
                 let uid = user.uid
                 UserDefaultsProvider.set(key: .firebaseAuthUid, value: uid)
-                completion?()
+                completion()
             }
         } else {
-            completion?()
+            completion()
         }
     }
     
