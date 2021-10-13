@@ -4,14 +4,14 @@
 [![GitHub Followers](https://img.shields.io/github/stars/mouredev/Twitimer-iOS?label=Repositorio%20público%20App%20iOS&style=social)](https://github.com/mouredev/Twitimer-iOS)
 [![GitHub Followers](https://img.shields.io/github/stars/mouredev/Twitimer-Android?label=Rpositorio%20público%20App%20Android&style=social)](https://github.com/mouredev/Twitimer-Android)
 
-Twitimer es una App gratuita para **[iOS](https://apps.apple.com/us/app/twitimer-twitch-guide/id1564592351)** y **[Android](https://play.google.com/store/apps/details?id=com.mouredev.twitimer)** que se ha desarrollado para ayudar a usuarios de Twitch, pero sobre todo pensando en generar contenido formativo para toda la comunidad de **programadores y programadoras** interesada en el mundo del desarrollo de apps para dispositivos móviles. Su apoyo ha hecho posible el proyecto (ante todo quiero que sea una App gratuita y en constante evolución).
+Twitimer es una App gratuita para **[iOS](https://apps.apple.com/us/app/twitimer-twitch-guide/id1564592351)** y **[Android](https://play.google.com/store/apps/details?id=com.mouredev.twitimer)** que se ha desarrollado para ayudar a usuarios de Twitch, pero, sobre todo, pensando en generar contenido formativo para toda la comunidad de **programadores y programadoras** interesada en el mundo del desarrollo de apps para dispositivos móviles. Su apoyo ha hecho posible el proyecto (ante todo quiero que sea una App gratuita y en constante evolución).
 
 ### Requisitos mínimos
 [![Swift](https://img.shields.io/badge/Swift-5-orange.svg?longCache=true&style=popout-square)](https://swift.org)
 [![Xcode](https://img.shields.io/badge/Xcode-12.5-blue.svg?longCache=true&style=popout-square)](https://developer.apple.com/xcode)
 [![iOS](https://img.shields.io/badge/iOS-14.1-red.svg?longCache=true&style=popout-square)](https://www.apple.com/es/ios)
 
-* Por razones de seguridad debes añadir tu propio fichero de configuración de Firebase `GoogleService-Info.plist` con Realtime Database activo y las claves de acceso al API de Twitch en Remote Config con los valores `TwitchClientID` y `TwitchClientSecret`.
+* Por razones de seguridad, debes añadir tu propio fichero de configuración de Firebase `GoogleService-Info.plist` con Realtime Database activo y las claves de acceso al API de Twitch en Remote Config con los valores `TwitchClientID` y `TwitchClientSecret`.
 * Es suficiente con ejecutar el archivo `Twitimer.xcodeproj` en Xcode.
 * [Puedes ver todo el proceso en este tutorial en YouTube](https://youtu.be/_FLHGY_ATWA)
 
@@ -21,7 +21,7 @@ Twitimer es una App gratuita para **[iOS](https://apps.apple.com/us/app/twitimer
 * Puedes acceder a su código fuente libremente.
 * Explico cómo funciona a nivel técnico en cada plataforma.
 * Sirve como ejemplo de proyecto real para entender así el ciclo de vida de un producto de software.
-* Decidimos entre la comunidad cómo mejorarla o cómo priorizar la solución de sus bugs.
+* Decidimos entre toda la comunidad cómo mejorarla o cómo priorizar la solución de sus bugs.
 * Contenido gratuito en formato **live codings** semanales en **[Twitch](https://twitch.tv/mouredev)** o de **tutoriales** en [**YouTube**](https://youtube.com/mouredevapps). Los live de Twitch se guardarán en mi **canal secundario** de [**YouTube**](https://youtube.com/mouredevbackups). También tenemos un canal de **chat** en nuestro servidor de **[Discord](https://discord.gg/U3KjjfUfUJ)**.
 * Y estas son sólo algunas ideas...
 
