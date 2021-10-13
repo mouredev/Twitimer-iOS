@@ -14,7 +14,8 @@ struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
     @State private var isStreamer = false
     @State private var showSaveScheduleAlert = false
-    @State private var showSyncScheduleAlert = false    
+    @State private var showSyncScheduleAlert = false
+    @State private var showInfoScheduleAlert = false
     
     // Localization
     
@@ -66,8 +67,14 @@ struct UserView: View {
                             }.toggleStyle(SwitchToggleStyle(tint: Color.primaryColor))
                             .onChange(of: isStreamer) {
                                 if viewModel.isStreamer != isStreamer {
-                                    viewModel.save(streamer: $0)
+                                    let streamer = $0
+                                    viewModel.save(streamer: streamer)
+                                    if streamer {
+                                        showInfoScheduleAlert.toggle()
+                                    }
                                 }
+                            }.alert(isPresented: $showInfoScheduleAlert) { () -> Alert in
+                                Alert(title: Text(viewModel.syncInfoAlertTitleText), message: Text(viewModel.syncInfoAlertBodyText), dismissButton: .default(Text(viewModel.okText)))
                             }
                         }
                         

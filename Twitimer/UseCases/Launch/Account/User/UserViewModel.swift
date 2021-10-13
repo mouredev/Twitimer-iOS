@@ -33,6 +33,8 @@ final class UserViewModel: ObservableObject {
     let streamerText = "user.streamer".localizedKey
     let syncAlertTitleText = "user.syncschedule.alert.title".localizedKey
     let syncAlertBodyText = "user.syncschedule.alert.body".localizedKey
+    let syncInfoAlertTitleText = "user.scheduleinfo.alert.title".localizedKey
+    let syncInfoAlertBodyText = "user.scheduleinfo.alert.body".localizedKey
     let okText = "accept".localizedKey
     let cancelText = "cancel".localizedKey
 

@@ -64,6 +64,8 @@
 "user.streamer" = "I'm a streamer";
 "user.syncschedule.alert.title" = "Synchronize Twitch schedule";
 "user.syncschedule.alert.body" = "Do you want to sync your recurring Twitch calendar? The Twitimer schedule will be overwritten.";
+"user.scheduleinfo.alert.title" = "Schedules synchronization";
+"user.scheduleinfo.alert.body" = "The schedules saved from Twitimer will not overwrite those of Twitch to avoid interfering with the platform and allow you to manage them in a more intuitive and agile way.";
 
 // Info
 
