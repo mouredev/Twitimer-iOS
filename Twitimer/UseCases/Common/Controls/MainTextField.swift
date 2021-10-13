@@ -23,17 +23,29 @@ struct MainTextField: View {
     
     var body: some View {
         
-        TextField("", text: $title).onReceive(Just(title)) { _ in
-            limitText(kTextLimit)
+        if readOnly {
+            HStack(spacing: Size.none.rawValue) {
+                Text(title)
+                    .font(size:.body)
+                    .foregroundColor(.lightColor)
+                    .padding(Size.small.rawValue)
+                    .background(Color.secondaryColor)
+                Spacer(minLength: Size.none.rawValue)
+            }
+        } else {
+            TextField("", text: $title).onReceive(Just(title)) { _ in
+                limitText(kTextLimit)
+            }
+            .modifier(TextFieldPlaceholderStyle(showPlaceHolder: title.isEmpty, placeholder: placeholder))
+            .font(size:.body)
+            .foregroundColor(.textColor)
+            .accentColor(.textColor)
+            .padding(Size.small.rawValue)
+            .background(Color.backgroundColor)
+            .clipShape(Capsule())
+            .disabled(!enable)
+            .fixedSize(horizontal: false, vertical: true)
         }
-        .modifier(TextFieldPlaceholderStyle(showPlaceHolder: title.isEmpty, placeholder: placeholder))
-        .font(size:.body)
-        .foregroundColor(readOnly ? .lightColor : .textColor)
-        .accentColor(readOnly ? .lightColor : .textColor)
-        .padding(Size.small.rawValue)
-        .background(readOnly ? Color.secondaryColor : Color.backgroundColor)
-        .clipShape(Capsule())
-        .disabled(!enable || readOnly)
     }
 
     // MARK: Functions
