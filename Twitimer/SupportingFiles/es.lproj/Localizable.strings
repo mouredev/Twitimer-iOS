@@ -112,3 +112,6 @@
 "settings.instagram.placeholder" = "Usuario de Instagram";
 "settings.tiktok.placeholder" = "Usuario de TikTok";
 "settings.savesettings" = "Guardar ajustes";
+"settings.deleteaccount.title" = "Eliminar cuenta";
+"settings.deleteaccount.button" = "Eliminar mi cuenta de Twitimer";
+"settings.deleteaccount.alert" = "Se eliminará tu cuenta de Twitimer y todos sus datos asociados. Tu cuenta de Twitch no se verá afectada.";

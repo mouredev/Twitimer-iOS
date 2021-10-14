@@ -90,6 +90,17 @@ final class Session {
         }
     }
     
+    func delete(success: @escaping () -> Void) {
+        
+        if let accessToken = token?.accessToken {
+            TwitchService.shared.revoke(accessToken: accessToken) {
+                self.remove(completion: success)
+            } failure: { (_) in
+                self.remove(completion: success)
+            }
+        }
+    }
+    
     func save(schedule: [UserSchedule]) {
         
         if user?.schedule != schedule {
@@ -414,6 +425,17 @@ final class Session {
         } else {
             messaging.unsubscribe(fromTopic: "\(topic)\(subscribeLanguageType.rawValue)")
             messaging.unsubscribe(fromTopic: "\(topic)\(unsubscribeLanguageType.rawValue)")
+        }
+    }
+    
+    private func remove(completion: @escaping () -> Void) {
+        
+        if let user = user {
+            FirebaseRDBService.shared.delete(user: user) {
+                self.clear(completion: completion)
+            } failure: { error in
+                self.clear(completion: completion)
+            }
         }
     }
     

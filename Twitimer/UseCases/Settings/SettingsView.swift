@@ -13,6 +13,7 @@ struct SettingsView: View {
     
     @ObservedObject var viewModel: SettingsViewModel
     @State private var showCloseSessionAlert = false
+    @State private var showDeleteAccountAlert = false
     
     // Localization
     
@@ -28,6 +29,8 @@ struct SettingsView: View {
                     
                     VStack(alignment: .leading, spacing: Size.small.rawValue) {
                         
+                        // Social media
+                        
                         Text(viewModel.socialMediaText).font(size: .head).foregroundColor(.textColor).padding(.bottom, Size.medium.rawValue)
                         
                         IconTextField(image: "discord", title: $viewModel.settings.discord, placeholder: viewModel.discordPlaceholder)
@@ -39,6 +42,22 @@ struct SettingsView: View {
                         IconTextField(image: "instagram", title: $viewModel.settings.instagram, placeholder: viewModel.instagramPlaceholder)
                         
                         IconTextField(image: "tiktok", title: $viewModel.settings.tiktok, placeholder: viewModel.tiktokPlaceholder)
+                        
+                        // Delete account
+                        
+                        Text(viewModel.deleteTitleText).font(size: .head).foregroundColor(.textColor).padding(.top, Size.big.rawValue).padding(.bottom, Size.medium.rawValue)
+                        
+                        MainButton(text: viewModel.deleteButtonText, action: {
+                            showDeleteAccountAlert.toggle()
+                        }, type: .destroy)
+                            .alert(isPresented: $showDeleteAccountAlert) { () -> Alert in
+                                Alert(title: Text(viewModel.deleteButtonText), message: Text(viewModel.deleteAlertText), primaryButton: .destructive(Text(viewModel.deleteTitleText), action: {
+                                    
+                                    viewModel.delete()
+                                    
+                                }), secondaryButton:
+                                            .cancel(Text(viewModel.cancelText)))
+                            }
                         
                         Spacer()
                     }.padding(EdgeInsets(top: Size.big.rawValue, leading: Size.medium.rawValue, bottom: Size.medium.rawValue, trailing: Size.medium.rawValue))

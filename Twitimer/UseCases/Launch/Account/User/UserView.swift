@@ -74,7 +74,11 @@ struct UserView: View {
                                     }
                                 }
                             }.alert(isPresented: $showInfoScheduleAlert) { () -> Alert in
-                                Alert(title: Text(viewModel.syncInfoAlertTitleText), message: Text(viewModel.syncInfoAlertBodyText), dismissButton: .default(Text(viewModel.okText)))
+                                Alert(title: Text(viewModel.syncInfoAlertTitleText), message: Text(viewModel.syncInfoAlertBodyText), dismissButton: .default(Text(viewModel.okText), action: {
+                                    
+                                    checkShowScheduleAlert()
+                                    
+                                }))
                             }
                         }
                         
@@ -138,17 +142,24 @@ struct UserView: View {
         .ignoresSafeArea(.keyboard, edges: .top)
         .onAppear() {
             isStreamer = viewModel.isStreamer
-            if isStreamer && !viewModel.readOnly && !viewModel.firstSync() {
-                DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-                    DispatchQueue.main.async {
-                        showSyncScheduleAlert.toggle()
-                        UserDefaultsProvider.set(key: .firstSync, value: true)
-                    }
-                }
-            }
+            checkShowScheduleAlert()
         }.toolbar {
             ToolbarItem(placement: .principal) {
                 Image("twitimer_logo").resizable().aspectRatio(contentMode: .fit).frame(height: Size.mediumBig.rawValue)
+            }
+        }
+    }
+    
+    // MARK: Private
+    
+    private func checkShowScheduleAlert() {
+        
+        if isStreamer && !viewModel.readOnly && !viewModel.firstSync() {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.async {
+                    showSyncScheduleAlert.toggle()
+                    UserDefaultsProvider.set(key: .firstSync, value: true)
+                }
             }
         }
     }

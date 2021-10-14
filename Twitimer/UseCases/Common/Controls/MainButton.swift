@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MainButtonType {
-    case primary, secondary
+    case primary, secondary, destroy
 }
 
 struct MainButton: View {
@@ -46,6 +46,18 @@ struct MainButton: View {
             .background(Color.backgroundColor)
             .clipShape(Capsule())
             .overlay(Capsule().stroke(lineWidth: Stroke.medium.rawValue).foregroundColor(.primaryColor))
+            
+        case .destroy:
+            
+            Button(action: action) {
+                HStack {
+                    Spacer()
+                    Text(text).foregroundColor(.lightColor).font(size: .button)
+                    Spacer()
+                }
+            }.frame(height: kHeight)
+            .background(Color.liveColor)
+            .clipShape(Capsule())
         }
     }
 }
@@ -60,6 +72,10 @@ struct MainButton_Previews: PreviewProvider {
             MainButton(text: "MainButton Secondary", action: {
                 print("MainButton secondary action")
             }, type: .secondary)
-        }.padding(Size.medium.rawValue)
+            
+            MainButton(text: "MainButton Destroy", action: {
+                print("MainButton destroy action")
+            }, type: .destroy)
+        }.preferredColorScheme(.dark).padding(Size.medium.rawValue)
     }
 }

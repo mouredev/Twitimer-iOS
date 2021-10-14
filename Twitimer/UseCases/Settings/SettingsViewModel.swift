@@ -37,6 +37,9 @@ final class SettingsViewModel: ObservableObject {
     let closeText = "user.closesession".localizedKey
     let closeAlertText = "user.closesession.alert.body".localizedKey
     let saveText = "settings.savesettings".localizedKey
+    let deleteTitleText = "settings.deleteaccount.title".localizedKey
+    let deleteButtonText = "settings.deleteaccount.button".localizedKey
+    let deleteAlertText = "settings.deleteaccount.alert".localizedKey
     let okText = "accept".localizedKey
     let cancelText = "cancel".localizedKey
     
@@ -76,6 +79,15 @@ final class SettingsViewModel: ObservableObject {
     
     func enableSave() -> Bool {
         return settings != Session.shared.user?.settings
+    }
+    
+    func delete() {
+        
+        Util.endEditing()
+        
+        Session.shared.delete {
+            self.delegate?.closeSession()
+        }
     }
     
 }

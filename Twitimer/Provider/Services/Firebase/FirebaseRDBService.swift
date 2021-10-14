@@ -142,4 +142,19 @@ final class FirebaseRDBService {
         }
     }
     
+    func delete(user: User, success: @escaping () -> Void, failure: @escaping (_ error: Error?) -> Void) {
+        
+        if let login = user.login {
+            ((user.streamer ?? false) ? streamersRef : usersRef).child(login).removeValue { error, _ in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
+        } else {
+            failure(nil)
+        }
+    }
+    
 }
