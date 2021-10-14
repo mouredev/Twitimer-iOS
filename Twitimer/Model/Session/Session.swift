@@ -140,6 +140,9 @@ final class Session {
                 user?.followedUsers = []
             }
             user?.followedUsers?.append(login)
+            if streamers == nil {
+                streamers = []
+            }
             streamers?.append(followedUser)
             
             setupNotification(add: true, topic: login)
