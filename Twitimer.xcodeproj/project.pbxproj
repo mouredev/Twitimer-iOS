@@ -1309,7 +1309,7 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = exactVersion;
-				version = 8.7.0;
+				version = 8.9.1;
 			};
 		};
 		ACCD6F6926CD38B50069E5E8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
@@ -1317,7 +1317,7 @@
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
 				kind = exactVersion;
-				version = 7.0.0;
+				version = 7.1.1;
 			};
 		};
 		ACCD6F6C26CD38D30069E5E8 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
