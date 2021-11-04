@@ -226,6 +226,7 @@ enum WeekdayType: Int, Codable, CaseIterable {
 
 struct UserSettings: Codable, Equatable {
     
+    var onHolidays: Bool
     var discord: String
     var youtube: String
     var twitter: String
@@ -234,7 +235,8 @@ struct UserSettings: Codable, Equatable {
     
     func toJSON() -> [String:Any] {
 
-        return [DatabaseField.discord.rawValue:discord,
+        return [DatabaseField.onHolidays.rawValue:onHolidays,
+                DatabaseField.discord.rawValue:discord,
                 DatabaseField.youtube.rawValue:youtube,
                 DatabaseField.twitter.rawValue:twitter,
                 DatabaseField.instagram.rawValue:instagram,
@@ -246,6 +248,6 @@ struct UserSettings: Codable, Equatable {
 // Empty UserSettings init
 extension UserSettings {
     init() {
-        self.init(discord: "", youtube: "", twitter: "", instagram: "", tiktok: "")
+        self.init(onHolidays: false, discord: "", youtube: "", twitter: "", instagram: "", tiktok: "")
     }
 }

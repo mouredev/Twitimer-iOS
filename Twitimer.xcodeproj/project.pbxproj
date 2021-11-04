@@ -100,6 +100,7 @@
 		ACEE88AE2635E159007E9473 /* FirebaseRCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEE88AD2635E159007E9473 /* FirebaseRCService.swift */; };
 		ACFCDD912631DF3100E9E270 /* SearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFCDD902631DF3100E9E270 /* SearchRowView.swift */; };
 		ACFD66A82639648B00FC5D6B /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFD66A72639648B00FC5D6B /* ImageExtension.swift */; };
+		ACFED7B527332A9E00DE9207 /* InfoIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFED7B427332A9E00DE9207 /* InfoIconView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		ACEE88AD2635E159007E9473 /* FirebaseRCService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRCService.swift; sourceTree = "<group>"; };
 		ACFCDD902631DF3100E9E270 /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
 		ACFD66A72639648B00FC5D6B /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		ACFED7B427332A9E00DE9207 /* InfoIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoIconView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,6 +591,7 @@
 		AC95848426329B1400DE4314 /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				ACFED7B327332A8700DE9207 /* Views */,
 				AC95848526329B3D00DE4314 /* InfoView.swift */,
 				AC95849326329B6500DE4314 /* InfoViewModel.swift */,
 				AC95848B26329B5700DE4314 /* InfoRouter.swift */,
@@ -671,6 +674,14 @@
 				ACDE04B62637827B00AFB371 /* Inter-Light.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ACFED7B327332A8700DE9207 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACFED7B427332A9E00DE9207 /* InfoIconView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -871,6 +882,7 @@
 				AC8681092631A9F600580B89 /* UserHeaderView.swift in Sources */,
 				AC8399C8263150FB00F0E8F1 /* AppDelegate.swift in Sources */,
 				ACEE88AE2635E159007E9473 /* FirebaseRCService.swift in Sources */,
+				ACFED7B527332A9E00DE9207 /* InfoIconView.swift in Sources */,
 				AC8681222631ACDE00580B89 /* CountdownRouter.swift in Sources */,
 				AC07A574267AA2950053B052 /* OnboardingPageView.swift in Sources */,
 				AC63915626D6AAFE005E4DFE /* SettingsViewModel.swift in Sources */,

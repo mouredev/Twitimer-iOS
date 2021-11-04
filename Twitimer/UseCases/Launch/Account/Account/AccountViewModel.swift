@@ -26,7 +26,7 @@ final class AccountViewModel: ObservableObject {
         return kTwitchService.authorizeURL
     }
     
-    // Publisehd
+    // Published
 
     @Published private(set) var authenticated = false
     @Published private(set) var info = true

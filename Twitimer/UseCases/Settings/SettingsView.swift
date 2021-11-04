@@ -14,6 +14,7 @@ struct SettingsView: View {
     @ObservedObject var viewModel: SettingsViewModel
     @State private var showCloseSessionAlert = false
     @State private var showDeleteAccountAlert = false
+    @State private var showOnHolidaysAlert = false
     
     // Localization
     
@@ -28,6 +29,29 @@ struct SettingsView: View {
                 if viewModel.streamer {
                     
                     VStack(alignment: .leading, spacing: Size.small.rawValue) {
+                        
+                        // Modo vacaciones
+                        
+                        Text(viewModel.holidayTitleText).font(size: .head).foregroundColor(.textColor).padding(.bottom, Size.medium.rawValue)
+                        
+                        Toggle(isOn: $viewModel.settings.onHolidays) {
+                            Text(viewModel.holidayBodyText).font(size: .subhead).foregroundColor(.textColor).frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding(.bottom, Size.mediumBig.rawValue)
+                        .toggleStyle(SwitchToggleStyle(tint: Color.primaryColor))
+                        .alert(isPresented: $showOnHolidaysAlert) { () -> Alert in
+                            Alert(title: Text(viewModel.holidayTitleText), message: Text(viewModel.holidayAlertText), primaryButton: .default(Text(viewModel.okText), action: {
+                                
+                                viewModel.save()
+                                
+                            }), secondaryButton: .cancel(Text(viewModel.cancelText), action: {
+                                
+                                viewModel.settings.onHolidays = false
+                                if viewModel.enableSave() {
+                                    viewModel.save()
+                                }
+                            }))
+                        }
                         
                         // Social media
                         
@@ -46,14 +70,14 @@ struct SettingsView: View {
                     .padding(EdgeInsets(top: Size.big.rawValue, leading: Size.medium.rawValue, bottom: Size.medium.rawValue, trailing: Size.medium.rawValue))
                     
                 } else {
-                
+                    
                     // Info
                     
                     viewModel.infoView()
                 }
                 
                 VStack(alignment: .leading, spacing: Size.small.rawValue) {
-                
+                    
                     // Delete account
                     
                     Text(viewModel.deleteTitleText).font(size: .head).foregroundColor(.textColor).padding(.top, Size.medium.rawValue).padding(.bottom, Size.medium.rawValue)
@@ -71,7 +95,7 @@ struct SettingsView: View {
                         }
                 }
                 .padding(EdgeInsets(top: Size.none.rawValue, leading: Size.medium.rawValue, bottom: Size.medium.rawValue, trailing: Size.medium.rawValue))
-                    
+                
                 Spacer()
                 
             }
@@ -86,24 +110,29 @@ struct SettingsView: View {
                 MainButton(text: viewModel.closeText, action: {
                     showCloseSessionAlert.toggle()
                 }, type: .secondary)
-                .alert(isPresented: $showCloseSessionAlert) { () -> Alert in
-                    Alert(title: Text(viewModel.closeText), message: Text(viewModel.closeAlertText), primaryButton: .default(Text(viewModel.okText), action: {
-                        
-                        viewModel.close()
-                        
-                    }), secondaryButton: .cancel(Text(viewModel.cancelText)))
-                }
+                    .alert(isPresented: $showCloseSessionAlert) { () -> Alert in
+                        Alert(title: Text(viewModel.closeText), message: Text(viewModel.closeAlertText), primaryButton: .default(Text(viewModel.okText), action: {
+                            
+                            viewModel.close()
+                            
+                        }), secondaryButton: .cancel(Text(viewModel.cancelText)))
+                    }
                 
                 if viewModel.streamer {
-                
+                    
                     MainButton(text: viewModel.saveText, action: {
-                        viewModel.save()
+
+                        if viewModel.saveHolidays() {
+                            showOnHolidaysAlert.toggle()
+                        } else {
+                            viewModel.save()
+                        }
                     }, type: .primary).enable(viewModel.enableSave())
                 }
                 
             }.padding(Size.medium.rawValue)
-            .background(Color.backgroundColor)
-            .shadow(radius: Size.verySmall.rawValue)
+                .background(Color.backgroundColor)
+                .shadow(radius: Size.verySmall.rawValue)
             
         }
         .background(Color.primaryColor)

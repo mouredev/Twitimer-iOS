@@ -14,7 +14,7 @@ enum DatabaseField: String {
     case streamer
     case schedule, enable, weekDay, date, duration, title // Schedule
     case followedUsers
-    case settings, discord, youtube, twitter, instagram, tiktok // Settings
+    case settings, onHolidays, discord, youtube, twitter, instagram, tiktok // Settings
 }
 
 final class FirebaseRDBService {

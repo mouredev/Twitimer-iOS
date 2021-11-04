@@ -227,22 +227,25 @@ final class Session {
             
             streamers.forEach { (streamer) in
                 
-                var nextSchedule: UserSchedule?
+                if !(streamer.settings?.onHolidays ?? false) {
                 
-                streamer.schedule?.forEach({ (schedule) in
+                    var nextSchedule: UserSchedule?
                     
-                    if schedule.enable {
+                    streamer.schedule?.forEach({ (schedule) in
                         
-                        let weekDate = schedule.weekDate()
-                        
-                        if (nextSchedule == nil && weekDate > currentDate) || (weekDate > currentDate && weekDate < nextSchedule!.date) {
-                            nextSchedule = schedule
+                        if schedule.enable {
+                            
+                            let weekDate = schedule.weekDate()
+                            
+                            if (nextSchedule == nil && weekDate > currentDate) || (weekDate > currentDate && weekDate < nextSchedule!.date) {
+                                nextSchedule = schedule
+                            }
                         }
+                    })
+                    
+                    if let nextSchedule = nextSchedule {
+                        sortedStreamings.append((streamer, nextSchedule))
                     }
-                })
-                
-                if let nextSchedule = nextSchedule {
-                    sortedStreamings.append((streamer, nextSchedule))
                 }
             }
             

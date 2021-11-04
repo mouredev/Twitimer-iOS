@@ -95,6 +95,13 @@
 "info.schedule.body" = "The streamer does not have available schedules. He may not have added them Twitimer yet (or he may be on holidays).";
 "info.schedule.advice.1" = "Try checking them out later. When the streamer has a schedule, a countdown will appear in the list of upcoming broadcasts.";
 
+"info.holiday.title" = "Holiday mode activated";
+"info.holiday.body" = "Holiday mode hides your broadcast schedules from your followers and notifies your audience.";
+"info.holiday.advice.1" = "Deactivate holiday mode from your user settings.";
+
+"info.userholidays.body" = "This user is on holidays. Schedules will be displayed at the moment that the streamer returns.";
+"info.userholidays.advice.1" = "If you have active notifications, you will receive a notification.";
+
 // Menu
 
 "menu.by" = "by";
@@ -105,6 +112,9 @@
 
 // Settings
 
+"settings.holiday.title" = "Holiday mode";
+"settings.holiday.body" = "Holiday mode hides your broadcast schedules from your followers and notifies your audience.";
+"settings.holiday.alert" = "Do you want to activate the holiday mode? Your followers will be notified.";
 "settings.socialmedia" = "Social media";
 "settings.discord.placeholder" = "Discord invitation link code";
 "settings.youtube.placeholder" = "YouTube user";

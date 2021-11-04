@@ -50,6 +50,7 @@ struct DatabaseUserSchedule: Codable {
 
 struct DatabaseUserSettings: Codable {
     
+    var onHolidays: Bool?
     var discord: String?
     var youtube: String?
     var twitter: String?
@@ -58,7 +59,7 @@ struct DatabaseUserSettings: Codable {
     
     func toUserSettings() -> UserSettings {
 
-        return UserSettings(discord: discord ?? "", youtube: youtube ?? "", twitter: twitter ?? "", instagram: instagram ?? "", tiktok: tiktok ?? "")
+        return UserSettings(onHolidays: onHolidays ?? false, discord: discord ?? "", youtube: youtube ?? "", twitter: twitter ?? "", instagram: instagram ?? "", tiktok: tiktok ?? "")
     }
     
 }
