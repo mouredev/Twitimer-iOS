@@ -13,7 +13,8 @@ struct Constants {
     static let kTwitchAuthUri = "https://id.twitch.tv/oauth2/"
     static let kTwitchAPIUri = "https://api.twitch.tv/helix/"
     static let kTwitchProfileUri = "https://www.twitch.tv/"
-    static let kTwitchRedirectUri = "http://localhost"
+    static let kTwitchRedirectUri = "https://twitimer.com"
+    static let kTwitchRedirectHost = "twitimer.com"
     
     // Remote
     static let kRemoteTwitchClientID = "TwitchClientID"
