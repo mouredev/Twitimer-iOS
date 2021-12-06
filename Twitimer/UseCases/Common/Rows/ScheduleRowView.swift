@@ -80,7 +80,7 @@ struct ScheduleRowView: View {
                         
                         Picker("\(readOnly ? "" : "+")\(duration)h", selection: $duration) {
                             ForEach((1...24), id: \.self) {
-                                Text("+\($0)h").foregroundColor(.textColor)
+                                Text(readOnly ? "\($0)h" :  "+\($0)h").foregroundColor(.textColor)
                             }
                         }.font(size: .body)
                         .accentColor(.lightColor)
