@@ -53,7 +53,7 @@ final class AccountViewModel: ObservableObject {
     
     func selected(url: URL) {
 
-        if url.host?.contains("localhost") ?? false {
+        if url.host?.contains(Constants.kTwitchRedirectHost) ?? false {
             
             let components = URLComponents(url: url, resolvingAgainstBaseURL: true)
             let authCodeItem = components?.queryItems?.first(where: { (item) -> Bool in
