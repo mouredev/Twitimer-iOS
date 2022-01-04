@@ -235,7 +235,7 @@ struct UserSettings: Codable, Equatable {
     
     func toJSON() -> [String:Any] {
 
-        return [DatabaseField.onHolidays.rawValue:onHolidays,
+        return [DatabaseField.onHolidays.rawValue:onHolidays ? 1 : 0,
                 DatabaseField.discord.rawValue:discord,
                 DatabaseField.youtube.rawValue:youtube,
                 DatabaseField.twitter.rawValue:twitter,
