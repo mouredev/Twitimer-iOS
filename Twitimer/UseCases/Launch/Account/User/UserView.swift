@@ -41,9 +41,13 @@ struct UserView: View {
                     HStack {
                         
                         if isStreamer {
-                            Text(viewModel.scheduleText).font(size: .head).foregroundColor(.textColor)
+                            
+                            if !viewModel.onHolidays {
+                                Text(viewModel.scheduleText).font(size: .head).foregroundColor(.textColor)
+                            }
                             
                             if !viewModel.readOnly && !viewModel.onHolidays {
+                                
                                 Button(action: {
                                     showSyncScheduleAlert.toggle()
                                 }, label: {
@@ -84,9 +88,11 @@ struct UserView: View {
                         
                     }.padding(Size.medium.rawValue)
                     
-                    if viewModel.onHolidays {
+                    if !isStreamer {
+                        viewModel.infoStreamerView()
+                    } else if viewModel.onHolidays {
                         viewModel.infoHolidayView()
-                    } else if isStreamer {
+                    } else {
                         if viewModel.readOnly && viewModel.schedule.isEmpty {
                             viewModel.emptyView()
                         } else {
@@ -102,10 +108,7 @@ struct UserView: View {
                                 }
                             }.listStyle(.plain)
                         }
-                    } else {
-                        viewModel.infoStreamerView()
                     }
-                    
                 }.background(Color.secondaryBackgroundColor)
                 .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
                 .shadow(radius: Size.verySmall.rawValue)
