@@ -26,11 +26,15 @@ final class UserRouter {
         return view
     }
         
-    func userHeaderView(user: User, readOnly: Bool, isStreamer: Bool, onClose: (() -> Void)?) -> UserHeaderView {
-        return UserHeaderView(profileImageUrl: user.profileImageUrl, login: user.login, displayName: user.displayName, broadcasterType: user.broadcasterType, settings: user.settings, isStreamer: isStreamer, readOnly: readOnly, onClose: onClose)
+    func userHeaderView(user: User, readOnly: Bool, isStreamer: Bool, onClose: (() -> Void)?, updateHolidays: (() -> Void)?) -> UserHeaderView {
+        return UserHeaderView(profileImageUrl: user.profileImageUrl, login: user.login, displayName: user.displayName, broadcasterType: user.broadcasterType, settings: user.settings, isStreamer: isStreamer, onHolidays: user.settings?.onHolidays ?? false, readOnly: readOnly, onClose: onClose, updateHolidays: updateHolidays)
     }
     
-    func infoView() -> InfoView {
+    func infoHolidayView(readOnly: Bool) -> InfoView {
+        return InfoRouter.view(type: readOnly ? .userholidays : .holiday)
+    }
+    
+    func infoStreamerView() -> InfoView {
         return InfoRouter.view(type: .streamer)
     }
     

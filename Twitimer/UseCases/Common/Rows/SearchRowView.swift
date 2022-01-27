@@ -42,6 +42,10 @@ struct SearchRowView: View {
         return user?.streamer ?? false
     }
     
+    private var onHolidays: Bool {
+        return user?.settings?.onHolidays ?? false
+    }
+    
     private var isSearch: Bool {
         return userSearch != nil
     }
@@ -60,7 +64,7 @@ struct SearchRowView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             
-            UserHeaderView(profileImageUrl: profileImageUrl, login: login, displayName: displayName, broadcasterType: broadcasterType, settings: settings, isStreamer: isStreamer, small: true, readOnly: true, onClose: nil)
+            UserHeaderView(profileImageUrl: profileImageUrl, login: login, displayName: displayName, broadcasterType: broadcasterType, settings: settings, isStreamer: isStreamer, onHolidays: onHolidays, small: true, readOnly: true, onClose: nil, updateHolidays: nil)
                 .padding(.leading, isSearch && !added ? Size.none.rawValue : Size.big.rawValue)
                 .background(Color.secondaryColor)
                 .opacity(isSearch ? 1 : (added ? 1 : UIConstants.kViewOpacity))

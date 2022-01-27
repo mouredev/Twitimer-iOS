@@ -46,46 +46,13 @@ struct InfoView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: Size.medium.rawValue) {
-                    if viewModel.type == .search {
-                        
+                    
+                    if let firstIcon = viewModel.firstIcon() {
                         Spacer(minLength: Size.none.rawValue)
-                        HStack(spacing: Size.medium.rawValue) {
-                            Image("calendar-add").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
-                            Text(viewModel.advice(number: 1)).font(size: .caption, type: .light).foregroundColor(.textColor)
-                            Spacer()
-                        }
-                        HStack(spacing: Size.medium.rawValue) {
-                            Image("calendar-remove").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
-                            Text(viewModel.advice(number: 2)).font(size: .caption, type: .light).foregroundColor(.textColor)
-                            Spacer()
-                        }
-                        
-                    } else if viewModel.type == .channel {
-                                                
-                        Spacer(minLength: Size.none.rawValue)
-                        HStack(spacing: Size.medium.rawValue) {
-                            Image("megaphone").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
-                            Text(viewModel.advice(number: 1)).font(size: .caption, type: .light).foregroundColor(.textColor)
-                            Spacer()
-                        }
-                        
-                    } else if viewModel.type == .streamer {
-                        
-                        Spacer(minLength: Size.none.rawValue)
-                        HStack(spacing: Size.medium.rawValue) {
-                            Image("calendar").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
-                            Text(viewModel.advice(number: 1)).font(size: .caption, type: .light).foregroundColor(.textColor)
-                            Spacer()
-                        }.padding(.bottom, Size.big.rawValue)
-                        
-                    } else if viewModel.type == .schedule {
-                                                
-                        Spacer(minLength: Size.none.rawValue)
-                        HStack(spacing: Size.medium.rawValue) {
-                            Image("time-clock-circle").template.resizable().aspectRatio(contentMode: .fit).frame(width: Size.big.rawValue).foregroundColor(.textColor)
-                            Text(viewModel.advice(number: 1)).font(size: .caption, type: .light).foregroundColor(.textColor)
-                            Spacer()
-                        }.padding(.bottom, Size.big.rawValue)
+                        InfoIconView(icon: firstIcon, text: viewModel.advice(number: 1))
+                    }                    
+                    if let secondIcon = viewModel.secondIcon() {
+                        InfoIconView(icon: secondIcon, text: viewModel.advice(number: 2))
                     }
                 }
             }.padding(Size.medium.rawValue)
@@ -96,6 +63,6 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoRouter.view(type: .streamer, extra: "Ibai")
-        InfoRouter.view(type: .schedule).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        InfoRouter.view(type: .auth).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

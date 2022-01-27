@@ -28,6 +28,9 @@ final class SettingsViewModel: ObservableObject {
 
     // Localization
     
+    let holidayTitleText = "settings.holiday.title".localizedKey
+    let holidayBodyText = "settings.holiday.body".localizedKey
+    let holidayAlertText = "settings.holiday.alert".localizedKey
     let socialMediaText = "settings.socialmedia".localizedKey
     let discordPlaceholder = "settings.discord.placeholder".localizedKey
     let youtubePlaceholder = "settings.youtube.placeholder".localizedKey
@@ -37,6 +40,9 @@ final class SettingsViewModel: ObservableObject {
     let closeText = "user.closesession".localizedKey
     let closeAlertText = "user.closesession.alert.body".localizedKey
     let saveText = "settings.savesettings".localizedKey
+    let deleteTitleText = "settings.deleteaccount.title".localizedKey
+    let deleteButtonText = "settings.deleteaccount.button".localizedKey
+    let deleteAlertText = "settings.deleteaccount.alert".localizedKey
     let okText = "accept".localizedKey
     let cancelText = "cancel".localizedKey
     
@@ -71,11 +77,24 @@ final class SettingsViewModel: ObservableObject {
         // HACK: Para forzar la recarga de la vista
         settings = Session.shared.user?.settings ?? UserSettings()
         
-        self.delegate?.updated(settings: settings)
+        delegate?.updated(settings: settings)
     }
     
     func enableSave() -> Bool {
         return settings != Session.shared.user?.settings
+    }
+    
+    func saveHolidays() -> Bool {
+        return settings.onHolidays && (settings.onHolidays != Session.shared.user?.settings?.onHolidays)
+    }
+    
+    func delete() {
+        
+        Util.endEditing()
+        
+        Session.shared.delete {
+            self.delegate?.closeSession()
+        }
     }
     
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum InfoViewType {
-    case countdown, search, channel, streamer, auth, schedule
+    case countdown, search, channel, streamer, auth, schedule, holiday, userholidays
 }
 
 final class InfoViewModel: ObservableObject {
@@ -36,6 +36,8 @@ final class InfoViewModel: ObservableObject {
             return "secure_connection"
         case .schedule:
             return "schedule"
+        case .holiday, .userholidays:
+            return "vacation"
         }
     }
     
@@ -53,6 +55,8 @@ final class InfoViewModel: ObservableObject {
             return "info.auth.title".localizedKey
         case .schedule:
             return "info.schedule.title".localizedKey
+        case .holiday, .userholidays:
+            return "info.holiday.title".localizedKey
         }
     }
     
@@ -70,6 +74,10 @@ final class InfoViewModel: ObservableObject {
             return "info.auth.body".localized
         case .schedule:
             return "info.schedule.body".localized
+        case .holiday:
+            return "info.holiday.body".localized
+        case .userholidays:
+            return "info.userholidays.body".localized
         }
     }
     
@@ -87,6 +95,36 @@ final class InfoViewModel: ObservableObject {
             return "info.auth.advice.\(number)".localizedKey
         case .schedule:
             return "info.schedule.advice.\(number)".localizedKey
+        case .holiday:
+            return "info.holiday.advice.\(number)".localizedKey
+        case .userholidays:
+            return "info.userholidays.advice.\(number)".localizedKey
+        }
+    }
+    
+    func firstIcon() -> String? {
+        switch type {            
+        case .search:
+            return "calendar-add"
+        case .channel, .userholidays:
+            return "megaphone"
+        case .streamer:
+            return "calendar"
+        case .schedule:
+            return "time-clock-circle"
+        case .holiday:
+            return "settings"
+        case .countdown, .auth:
+            return nil
+        }
+    }
+    
+    func secondIcon() -> String? {
+        switch type {
+        case .search:
+            return "calendar-remove"
+        case .countdown, .channel, .streamer, .auth, .schedule, .holiday, .userholidays:
+            return nil
         }
     }
     

@@ -14,7 +14,7 @@ enum DatabaseField: String {
     case streamer
     case schedule, enable, weekDay, date, duration, title // Schedule
     case followedUsers
-    case settings, discord, youtube, twitter, instagram, tiktok // Settings
+    case settings, onHolidays, discord, youtube, twitter, instagram, tiktok // Settings
 }
 
 final class FirebaseRDBService {
@@ -139,6 +139,21 @@ final class FirebaseRDBService {
 
         if let login = user.login {
             ((user.streamer ?? false) ? streamersRef : usersRef).child(login).child(DatabaseField.followedUsers.rawValue).setValue(user.followedUsers)
+        }
+    }
+    
+    func delete(user: User, success: @escaping () -> Void, failure: @escaping (_ error: Error?) -> Void) {
+        
+        if let login = user.login {
+            ((user.streamer ?? false) ? streamersRef : usersRef).child(login).removeValue { error, _ in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
+        } else {
+            failure(nil)
         }
     }
     

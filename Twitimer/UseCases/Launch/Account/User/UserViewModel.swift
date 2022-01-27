@@ -24,6 +24,7 @@ final class UserViewModel: ObservableObject {
     }
     
     @Published var schedule: [UserSchedule] = []
+    @Published var onHolidays = false
     
     // Localization
     
@@ -33,6 +34,8 @@ final class UserViewModel: ObservableObject {
     let streamerText = "user.streamer".localizedKey
     let syncAlertTitleText = "user.syncschedule.alert.title".localizedKey
     let syncAlertBodyText = "user.syncschedule.alert.body".localizedKey
+    let syncInfoAlertTitleText = "user.scheduleinfo.alert.title".localizedKey
+    let syncInfoAlertBodyText = "user.scheduleinfo.alert.body".localizedKey
     let okText = "accept".localizedKey
     let cancelText = "cancel".localizedKey
 
@@ -41,10 +44,11 @@ final class UserViewModel: ObservableObject {
     init(router: UserRouter, user: User?, onClose: (() -> Void)?) {
         self.router = router
         self.user = user
-        self.onClose = onClose        
+        self.onClose = onClose
         self.readOnly = user != nil
         
         self.schedule = filterSchedule(schedules: user?.schedule ?? Session.shared.user?.schedule ?? [])
+        self.onHolidays = user?.settings?.onHolidays ?? Session.shared.user?.settings?.onHolidays ?? false
     }
     
     // Public
@@ -52,14 +56,20 @@ final class UserViewModel: ObservableObject {
     func userView(isStreamer: Bool) -> UserHeaderView? {
         if let user = user ?? Session.shared.user {
             if user.login != nil {
-                return router.userHeaderView(user: user, readOnly: readOnly, isStreamer: isStreamer, onClose: onClose)
+                return router.userHeaderView(user: user, readOnly: readOnly, isStreamer: isStreamer, onClose: onClose, updateHolidays: {
+                    self.onHolidays = Session.shared.user?.settings?.onHolidays ?? false
+                })
             }
         }
         return nil
     }
     
-    func infoView() -> InfoView {
-        return router.infoView()
+    func infoHolidayView() -> InfoView {
+        return router.infoHolidayView(readOnly: readOnly)
+    }
+    
+    func infoStreamerView() -> InfoView {
+        return router.infoStreamerView()
     }
     
     func emptyView() -> InfoView {

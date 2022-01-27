@@ -14,7 +14,8 @@ struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
     @State private var isStreamer = false
     @State private var showSaveScheduleAlert = false
-    @State private var showSyncScheduleAlert = false    
+    @State private var showSyncScheduleAlert = false
+    @State private var showInfoScheduleAlert = false
     
     // Localization
     
@@ -40,9 +41,13 @@ struct UserView: View {
                     HStack {
                         
                         if isStreamer {
-                            Text(viewModel.scheduleText).font(size: .head).foregroundColor(.textColor)
                             
-                            if !viewModel.readOnly {
+                            if !viewModel.onHolidays {
+                                Text(viewModel.scheduleText).font(size: .head).foregroundColor(.textColor)
+                            }
+                            
+                            if !viewModel.readOnly && !viewModel.onHolidays {
+                                
                                 Button(action: {
                                     showSyncScheduleAlert.toggle()
                                 }, label: {
@@ -66,14 +71,28 @@ struct UserView: View {
                             }.toggleStyle(SwitchToggleStyle(tint: Color.primaryColor))
                             .onChange(of: isStreamer) {
                                 if viewModel.isStreamer != isStreamer {
-                                    viewModel.save(streamer: $0)
+                                    let streamer = $0
+                                    viewModel.save(streamer: streamer)
+                                    if streamer {
+                                        showInfoScheduleAlert.toggle()
+                                    }
                                 }
+                            }.alert(isPresented: $showInfoScheduleAlert) { () -> Alert in
+                                Alert(title: Text(viewModel.syncInfoAlertTitleText), message: Text(viewModel.syncInfoAlertBodyText), dismissButton: .default(Text(viewModel.okText), action: {
+                                    
+                                    checkShowScheduleAlert()
+                                    
+                                }))
                             }
                         }
                         
                     }.padding(Size.medium.rawValue)
                     
-                    if isStreamer {
+                    if !isStreamer {
+                        viewModel.infoStreamerView()
+                    } else if viewModel.onHolidays {
+                        viewModel.infoHolidayView()
+                    } else {
                         if viewModel.readOnly && viewModel.schedule.isEmpty {
                             viewModel.emptyView()
                         } else {
@@ -89,10 +108,7 @@ struct UserView: View {
                                 }
                             }.listStyle(.plain)
                         }
-                    } else {
-                        viewModel.infoView()
                     }
-                    
                 }.background(Color.secondaryBackgroundColor)
                 .cornerRadius(Size.big.rawValue, corners: [.topRight, .topLeft])
                 .shadow(radius: Size.verySmall.rawValue)
@@ -103,7 +119,7 @@ struct UserView: View {
                     
                     HStack(spacing: Size.medium.rawValue) {
                         
-                        if isStreamer {
+                        if isStreamer && !viewModel.onHolidays {
                             
                             MainButton(text: viewModel.saveText, action: {
                                 showSaveScheduleAlert.toggle()
@@ -131,17 +147,24 @@ struct UserView: View {
         .ignoresSafeArea(.keyboard, edges: .top)
         .onAppear() {
             isStreamer = viewModel.isStreamer
-            if isStreamer && !viewModel.readOnly && !viewModel.firstSync() {
-                DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-                    DispatchQueue.main.async {
-                        showSyncScheduleAlert.toggle()
-                        UserDefaultsProvider.set(key: .firstSync, value: true)
-                    }
-                }
-            }
+            checkShowScheduleAlert()
         }.toolbar {
             ToolbarItem(placement: .principal) {
                 Image("twitimer_logo").resizable().aspectRatio(contentMode: .fit).frame(height: Size.mediumBig.rawValue)
+            }
+        }
+    }
+    
+    // MARK: Private
+    
+    private func checkShowScheduleAlert() {
+        
+        if isStreamer && !viewModel.readOnly && !viewModel.firstSync() {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+                DispatchQueue.main.async {
+                    showSyncScheduleAlert.toggle()
+                    UserDefaultsProvider.set(key: .firstSync, value: true)
+                }
             }
         }
     }

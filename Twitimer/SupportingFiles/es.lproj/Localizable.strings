@@ -64,6 +64,8 @@
 "user.streamer" = "Soy streamer";
 "user.syncschedule.alert.title" = "Sincronizar horario de Twitch";
 "user.syncschedule.alert.body" = "¿Quieres sincronizar tu calendario recurrente de Twitch? Se sobrescribirá la programación de Twitimer.";
+"user.scheduleinfo.alert.title" = "Sincronización de horarios";
+"user.scheduleinfo.alert.body" = "Los horarios guardados desde Twitimer no sobrescribirán los de Twitch para evitar interferir en la plataforma y permitirte gestionarlos de forma más intuitiva y ágil.";
 
 // Info
 
@@ -93,6 +95,13 @@
 "info.schedule.body" = "El streamer no tiene horarios disponibles. Puede que aún no los haya añadido desde Twitimer (o quizá se está tomando unas vacaciones).";
 "info.schedule.advice.1" = "Prueba a revisarlos más tarde. Cuando tenga algún horario aparecerá una cuenta atrás en el listado de próximas emisiones.";
 
+"info.holiday.title" = "Modo vacaciones activado";
+"info.holiday.body" = "El modo vacaciones oculta tus horarios de transmisión a tus seguidores y notifica a tu audiencia.";
+"info.holiday.advice.1" = "Desactiva el modo vacaciones desde los ajustes de tu usuario.";
+
+"info.userholidays.body" = "Este usuario se encuentra de vacaciones. Los horarios se mostrarán en el momento que el streamer regrese.";
+"info.userholidays.advice.1" = "Si tienes las notificaciones activas, recibirás un aviso.";
+
 // Menu
 
 "menu.by" = "por";
@@ -103,6 +112,9 @@
 
 // Settings
 
+"settings.holiday.title" = "Modo vacaciones";
+"settings.holiday.body" = "El modo vacaciones oculta tus horarios de transmisión a tus seguidores y notifica a tu audiencia.";
+"settings.holiday.alert" = "¿Quieres activar el modo vacaciones? Se notificará a tus seguidores.";
 "settings.socialmedia" = "Redes sociales";
 "settings.discord.placeholder" = "Código de invitación de Discord";
 "settings.youtube.placeholder" = "Usuario de YouTube";
@@ -110,3 +122,6 @@
 "settings.instagram.placeholder" = "Usuario de Instagram";
 "settings.tiktok.placeholder" = "Usuario de TikTok";
 "settings.savesettings" = "Guardar ajustes";
+"settings.deleteaccount.title" = "Eliminar cuenta";
+"settings.deleteaccount.button" = "Eliminar mi cuenta de Twitimer";
+"settings.deleteaccount.alert" = "Se eliminará tu cuenta de Twitimer y todos sus datos asociados. Tu cuenta de Twitch no se verá afectada.";

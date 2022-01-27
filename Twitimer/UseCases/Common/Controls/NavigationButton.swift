@@ -18,7 +18,7 @@ struct NavigationButton: View {
                 Button(action: {
                     action()
                 }) {
-                    Text(text).font(size: .body, type: .light).foregroundColor(.textColor)
+                    Text(text).font(size: .body, type: .light).foregroundColor(.textColor).multilineTextAlignment(.leading)
                 }
                 Spacer()
                 Image(systemName: "chevron.right")

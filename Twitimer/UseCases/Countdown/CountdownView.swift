@@ -74,6 +74,9 @@ struct CountdownView: View {
                 .onAppear() {
                     viewModel.data()
                 }
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+                    viewModel.data()
+                }
             
             if viewModel.loading {
                 CustomProgressView()

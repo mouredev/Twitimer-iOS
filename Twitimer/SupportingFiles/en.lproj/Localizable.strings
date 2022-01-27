@@ -64,6 +64,8 @@
 "user.streamer" = "I'm a streamer";
 "user.syncschedule.alert.title" = "Synchronize Twitch schedule";
 "user.syncschedule.alert.body" = "Do you want to sync your recurring Twitch calendar? The Twitimer schedule will be overwritten.";
+"user.scheduleinfo.alert.title" = "Schedules synchronization";
+"user.scheduleinfo.alert.body" = "The schedules saved from Twitimer will not overwrite those of Twitch to avoid interfering with the platform and allow you to manage them in a more intuitive and agile way.";
 
 // Info
 
@@ -93,6 +95,13 @@
 "info.schedule.body" = "The streamer does not have available schedules. He may not have added them Twitimer yet (or he may be on holidays).";
 "info.schedule.advice.1" = "Try checking them out later. When the streamer has a schedule, a countdown will appear in the list of upcoming broadcasts.";
 
+"info.holiday.title" = "Holiday mode activated";
+"info.holiday.body" = "Holiday mode hides your broadcast schedules from your followers and notifies your audience.";
+"info.holiday.advice.1" = "Deactivate holiday mode from your user settings.";
+
+"info.userholidays.body" = "This user is on holidays. Schedules will be displayed at the moment that the streamer returns.";
+"info.userholidays.advice.1" = "If you have active notifications, you will receive a notification.";
+
 // Menu
 
 "menu.by" = "by";
@@ -103,6 +112,9 @@
 
 // Settings
 
+"settings.holiday.title" = "Holiday mode";
+"settings.holiday.body" = "Holiday mode hides your broadcast schedules from your followers and notifies your audience.";
+"settings.holiday.alert" = "Do you want to activate the holiday mode? Your followers will be notified.";
 "settings.socialmedia" = "Social media";
 "settings.discord.placeholder" = "Discord invitation link code";
 "settings.youtube.placeholder" = "YouTube user";
@@ -110,3 +122,6 @@
 "settings.instagram.placeholder" = "Instagram user";
 "settings.tiktok.placeholder" = "TikTok user";
 "settings.savesettings" = "Save settings";
+"settings.deleteaccount.title" = "Delete account";
+"settings.deleteaccount.button" = "Delete my Twitimer account";
+"settings.deleteaccount.alert" = "Your Twitimer account and all their associated data will be deleted. Your Twitch account will not be affected.";

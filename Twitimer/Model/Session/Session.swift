@@ -90,6 +90,17 @@ final class Session {
         }
     }
     
+    func delete(success: @escaping () -> Void) {
+        
+        if let accessToken = token?.accessToken {
+            TwitchService.shared.revoke(accessToken: accessToken) {
+                self.remove(completion: success)
+            } failure: { (_) in
+                self.remove(completion: success)
+            }
+        }
+    }
+    
     func save(schedule: [UserSchedule]) {
         
         if user?.schedule != schedule {
@@ -129,6 +140,9 @@ final class Session {
                 user?.followedUsers = []
             }
             user?.followedUsers?.append(login)
+            if streamers == nil {
+                streamers = []
+            }
             streamers?.append(followedUser)
             
             setupNotification(add: true, topic: login)
@@ -213,22 +227,25 @@ final class Session {
             
             streamers.forEach { (streamer) in
                 
-                var nextSchedule: UserSchedule?
+                if !(streamer.settings?.onHolidays ?? false) {
                 
-                streamer.schedule?.forEach({ (schedule) in
+                    var nextSchedule: UserSchedule?
                     
-                    if schedule.enable {
+                    streamer.schedule?.forEach({ (schedule) in
                         
-                        let weekDate = schedule.weekDate()
-                        
-                        if (nextSchedule == nil && weekDate > currentDate) || (weekDate > currentDate && weekDate < nextSchedule!.date) {
-                            nextSchedule = schedule
+                        if schedule.enable {
+                            
+                            let weekDate = schedule.weekDate()
+                            
+                            if (nextSchedule == nil && weekDate > currentDate) || (weekDate > currentDate && weekDate < nextSchedule!.date) {
+                                nextSchedule = schedule
+                            }
                         }
+                    })
+                    
+                    if let nextSchedule = nextSchedule {
+                        sortedStreamings.append((streamer, nextSchedule))
                     }
-                })
-                
-                if let nextSchedule = nextSchedule {
-                    sortedStreamings.append((streamer, nextSchedule))
                 }
             }
             
@@ -414,6 +431,17 @@ final class Session {
         } else {
             messaging.unsubscribe(fromTopic: "\(topic)\(subscribeLanguageType.rawValue)")
             messaging.unsubscribe(fromTopic: "\(topic)\(unsubscribeLanguageType.rawValue)")
+        }
+    }
+    
+    private func remove(completion: @escaping () -> Void) {
+        
+        if let user = user {
+            FirebaseRDBService.shared.delete(user: user) {
+                self.clear(completion: completion)
+            } failure: { error in
+                self.clear(completion: completion)
+            }
         }
     }
     
