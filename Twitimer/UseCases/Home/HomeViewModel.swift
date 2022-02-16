@@ -63,7 +63,7 @@ final class HomeViewModel: ObservableObject {
         return router.menuView()
     }
     
-    func tabView(type: HomeViewTabType, delegate: CountdownViewModelDelegate? = nil) -> AnyView {
+    func tabView(type: HomeViewTabType, delegate: CountdownViewModelDelegate? = nil) -> some View {
         
         switch type {
         case .countdown:

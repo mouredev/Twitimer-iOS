@@ -26,11 +26,11 @@ extension View {
     
     // MARK: iOS 15
     
-    func hideTableSeparator() -> AnyView {
+    func hideTableSeparator() -> some View {
         if #available(iOS 15.0, *) {
-            return AnyView(self.listRowSeparator(.hidden).listRowInsets(EdgeInsets()))
+            return AnyView(listRowSeparator(.hidden).listRowInsets(EdgeInsets()))
         }
-        return AnyView(self.listRowInsets(EdgeInsets()))
+        return AnyView(listRowInsets(EdgeInsets()))
     }
     
 }
