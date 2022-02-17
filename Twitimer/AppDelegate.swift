@@ -72,7 +72,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         UITabBar.appearance().isTranslucent = false
         UITabBar.appearance().clipsToBounds = true // Remove top line
         UITabBar.appearance().standardAppearance = tabBarAppearance
-        if #available(iOS 15.0, *) {
+        if #available(iOS 15, *) {
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
         
