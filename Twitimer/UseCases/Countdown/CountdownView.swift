@@ -44,8 +44,8 @@ struct CountdownView: View {
                                     TimerRowView(streaming: streaming, endDate:
                                                     streaming.schedule.date)
                                 }
-                                .hideTableSeparator()
                                 .background(Color.backgroundColor)
+                                .hideTableSeparator()
                             }
                         }.listStyle(.plain)
                             .pullToRefresh(isShowing: $isShowingRefresh) {

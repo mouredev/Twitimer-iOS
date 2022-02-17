@@ -23,14 +23,15 @@ extension View {
         if condition { transform(self) }
         else { self }
     }
-    
+
     // MARK: iOS 15
     
-    func hideTableSeparator() -> AnyView {
-        if #available(iOS 15.0, *) {
-            return AnyView(self.listRowSeparator(.hidden).listRowInsets(EdgeInsets()))
+    func hideTableSeparator() -> some View {
+        if #available(iOS 15, *) {
+            return AnyView(listRowSeparator(.hidden).listRowInsets(EdgeInsets()))
+        } else {
+            return AnyView(listRowInsets(EdgeInsets()))
         }
-        return AnyView(self.listRowInsets(EdgeInsets()))
     }
     
 }

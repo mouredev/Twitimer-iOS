@@ -19,7 +19,7 @@ final class UserViewModel: ObservableObject {
     
     var isStreamer: Bool {
         get {
-            return user?.streamer ?? Session.shared.user?.streamer ?? false
+            return getUser()?.streamer ?? false
         }
     }
     
@@ -46,15 +46,15 @@ final class UserViewModel: ObservableObject {
         self.user = user
         self.onClose = onClose
         self.readOnly = user != nil
-        
-        self.schedule = filterSchedule(schedules: user?.schedule ?? Session.shared.user?.schedule ?? [])
-        self.onHolidays = user?.settings?.onHolidays ?? Session.shared.user?.settings?.onHolidays ?? false
+
+        self.onHolidays = getUser()?.settings?.onHolidays ?? false
+        self.schedule = filterSchedule(schedules: getUser()?.schedule ?? [])
     }
     
     // Public
     
     func userView(isStreamer: Bool) -> UserHeaderView? {
-        if let user = user ?? Session.shared.user {
+        if let user = getUser() {
             if user.login != nil {
                 return router.userHeaderView(user: user, readOnly: readOnly, isStreamer: isStreamer, onClose: onClose, updateHolidays: {
                     self.onHolidays = Session.shared.user?.settings?.onHolidays ?? false
@@ -77,7 +77,7 @@ final class UserViewModel: ObservableObject {
     }
         
     func hasUser() -> Bool {
-        return (user ?? Session.shared.user) != nil
+        return getUser() != nil
     }
     
     func save(streamer: Bool) {
@@ -112,6 +112,10 @@ final class UserViewModel: ObservableObject {
     }
     
     // Private
+    
+    private func getUser() -> User? {
+        return user ?? Session.shared.user
+    }
     
     private func filterSchedule(schedules: [UserSchedule]) -> [UserSchedule] {
         return schedules.filter { schedule in

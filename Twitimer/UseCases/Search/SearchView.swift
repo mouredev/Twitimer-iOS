@@ -85,13 +85,12 @@ struct SearchView: View {
                             if let search = viewModel.search, !search.isEmpty {
                                 ForEach(search, id: \.id) { user in
                                     SearchRowView(user: nil, userSearch: user, addAction: nil)
-                                        .hideTableSeparator()
                                         .background(Color.backgroundColor)
                                         .onTapGesture {
                                             if let user = user.broadcasterLogin {
                                                 viewModel.search(user: user)
                                             }
-                                        }
+                                        }.hideTableSeparator()
                                 }
                             } else {
                                 ForEach(viewModel.users, id: \.id) { user in
@@ -102,8 +101,8 @@ struct SearchView: View {
                                             viewModel.updateCount()
                                         })
                                     }
-                                    .hideTableSeparator()
                                     .background(Color.backgroundColor)
+                                    .hideTableSeparator()
                                 }
                             }
                         }.listStyle(.plain)
