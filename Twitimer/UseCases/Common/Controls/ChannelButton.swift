@@ -24,16 +24,15 @@ struct ChannelButton: View {
         Button(action: {
             profile()
         }, label: {
-            Text(seeChannelText)
-                .font(size: .caption, type: .light).foregroundColor(.lightColor)
             Image("twitch").resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: Size.medium.rawValue).colorMultiply(.lightColor)
+                .frame(width: Size.mediumHalfBig.rawValue, height: Size.mediumHalfBig.rawValue).colorMultiply(.lightColor)
         }).buttonStyle(BorderlessButtonStyle())
         .padding(.horizontal, Size.small.rawValue)
-        .padding(.vertical, Size.verySmall.rawValue)
+        .padding(.vertical, Size.small.rawValue)
         .background((darkBackground ?? false) ? Color.primaryColor : Color.secondaryColor)
-        .clipShape(Capsule())
+        .frame(width: Size.big.rawValue, height: Size.big.rawValue)
+        .clipShape(Circle())
         .shadow(color: Color.darkColor.opacity(UIConstants.kShadowOpacity), radius: Size.verySmall.rawValue)
     }
         

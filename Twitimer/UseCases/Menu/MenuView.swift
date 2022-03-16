@@ -53,7 +53,8 @@ struct MenuView: View {
                             
                             Spacer()
                             
-                        }.padding(EdgeInsets(top: Size.medium.rawValue, leading: Size.medium.rawValue, bottom: Size.none.rawValue, trailing: Size.medium.rawValue))
+                        }.padding(EdgeInsets(top: Size.medium.rawValue, leading: Size.medium.rawValue, bottom: Size.none.rawValue, trailing:
+                                                Size.medium.rawValue))
                     }.background(Color.primaryColor)
                     
                     // Footer
@@ -82,7 +83,7 @@ struct MenuView: View {
                 }
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.backgroundColor.edgesIgnoringSafeArea(.all))
+            .background(Color.backgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
 

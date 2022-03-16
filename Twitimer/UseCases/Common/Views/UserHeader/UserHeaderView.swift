@@ -32,7 +32,7 @@ struct UserHeaderView: View, SettingsDelegate {
                 UserAvatarView(url: url, user: login ?? "", size: small ? .veryBig : .gigant, settings: !readOnly, delegate: self)
             }
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: Size.none.rawValue) {
                 if small {
                     HStack(spacing: Size.none.rawValue) {
                         Text(displayName ?? "").font(size: .button, type: .bold).lineLimit(2)
@@ -46,11 +46,9 @@ struct UserHeaderView: View, SettingsDelegate {
                     }
                 } else {
                     HStack(alignment: .top) {
-                        Text(displayName ?? "").font(size: .title)
+                        Text(displayName ?? "").font(size: .subtitle, type: .bold)
                         Spacer()
-                        if let broadcasterType = broadcasterType, !broadcasterType.rawValue.isEmpty {
-                            UserBroadcasterTypeView(type: broadcasterType)
-                        }
+                        ChannelButton(login: login, darkBackground: false)
                     }
                     Text("@\(login ?? "")").font(size: .body, type: .light)
                     
@@ -84,8 +82,12 @@ struct UserHeaderView: View, SettingsDelegate {
                         }
                         
                         Spacer(minLength: Size.none.rawValue)
-                        ChannelButton(login: login, darkBackground: false)
-                    }
+                        if let broadcasterType = broadcasterType, !broadcasterType.rawValue.isEmpty {
+                            
+                            UserBroadcasterTypeView(type: broadcasterType)
+                        }
+                        
+                    }.padding(.top, Size.verySmall.rawValue)
                 }
             }.foregroundColor(Color.lightColor)
             
@@ -107,7 +109,7 @@ struct UserHeaderView: View, SettingsDelegate {
 
 struct UserHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        UserHeaderView(profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, settings: UserSettings(onHolidays: true, discord: "", youtube: "", twitter: "mouredev", instagram: "mouredev", tiktok: "mouredev"), isStreamer: true, onHolidays: true, small: true, readOnly: true, onClose: {
+        UserHeaderView(profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, settings: UserSettings(onHolidays: true, discord: "", youtube: "", twitter: "mouredev", instagram: "mouredev", tiktok: "mouredev"), isStreamer: true, onHolidays: true, small: false, readOnly: true, onClose: {
             print("onClose")
         }, updateHolidays: {
             print("updateHolidays")
