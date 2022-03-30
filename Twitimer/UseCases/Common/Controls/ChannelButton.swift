@@ -14,10 +14,6 @@ struct ChannelButton: View {
     let login: String?
     let darkBackground: Bool?
     
-    // Localization
-    
-    private let seeChannelText = "user.seechannel".localizedKey
-    
     // Body
     
     var body: some View {

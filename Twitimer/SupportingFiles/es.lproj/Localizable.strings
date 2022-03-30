@@ -60,7 +60,6 @@
 "user.closesession" = "Cerrar sesión";
 "user.closesession.alert.body" = "¿Estás seguro de que quieres cerrar sesión?";
 "user.saveschedule.alert.body" = "Si guardas estos nuevos horarios se notificará a tus espectadores.";
-"user.seechannel" = "Ver canal";
 "user.streamer" = "Soy streamer";
 "user.syncschedule.alert.title" = "Sincronizar horario de Twitch";
 "user.syncschedule.alert.body" = "¿Quieres sincronizar tu calendario recurrente de Twitch? Se sobrescribirá la programación de Twitimer.";

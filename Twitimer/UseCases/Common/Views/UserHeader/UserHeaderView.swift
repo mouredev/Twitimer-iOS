@@ -35,12 +35,12 @@ struct UserHeaderView: View, SettingsDelegate {
             VStack(alignment: .leading, spacing: Size.none.rawValue) {
                 if small {
                     HStack(spacing: Size.none.rawValue) {
-                        Text(displayName ?? "").font(size: .button, type: .bold).lineLimit(2)
                         if onHolidays {
                             Image("holiday").template.resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: Size.mediumBig.rawValue).colorMultiply(.lightColor).padding(.leading, Size.small.rawValue)
+                                .frame(width: Size.mediumBig.rawValue).colorMultiply(.lightColor).padding(.trailing, Size.small.rawValue)
                         }
+                        Text(displayName ?? "").font(size: .button, type: .bold).lineLimit(2)
                         Spacer()
                         ChannelButton(login: login, darkBackground: true)
                     }
@@ -109,7 +109,7 @@ struct UserHeaderView: View, SettingsDelegate {
 
 struct UserHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        UserHeaderView(profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, settings: UserSettings(onHolidays: true, discord: "", youtube: "", twitter: "mouredev", instagram: "mouredev", tiktok: "mouredev"), isStreamer: true, onHolidays: true, small: false, readOnly: true, onClose: {
+        UserHeaderView(profileImageUrl: "https://static-cdn.jtvnw.net/jtv_user_pictures/da78091c-06f0-443c-bc6d-a1506a999d94-profile_image-300x300.png", login: "mouredev", displayName: "MoureDev", broadcasterType: .partner, settings: UserSettings(onHolidays: true, discord: "", youtube: "", twitter: "mouredev", instagram: "mouredev", tiktok: "mouredev"), isStreamer: true, onHolidays: true, small: true, readOnly: true, onClose: {
             print("onClose")
         }, updateHolidays: {
             print("updateHolidays")
